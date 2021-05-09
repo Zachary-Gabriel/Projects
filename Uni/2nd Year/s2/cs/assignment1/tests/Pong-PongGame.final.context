@@ -1,0 +1,185 @@
+Read 62 tokens
+
+Token Contexts:
+
+token: 60
+    {kind: identifier, spelling: "let", line: 39, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  38: 
+  39:     let
+          ^
+
+----------------
+token: 55
+    {kind: do, spelling: "do", line: 37, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns true
+    token_is_in(token,symbol) returns false
+token_context:
+  36:     constructor PongGame new() {
+  37:     do
+          ^
+
+----------------
+token: 50
+    {kind: identifier, spelling: "PongGame", line: 36, column: 17}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  35:     /** Constructs a new Pong Game. */
+  36:     constructor PongGame
+                      ^
+
+----------------
+token: 45
+    {kind: identifier, spelling: "int", line: 33, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  32:     // The current width of the bat
+  33:     field int
+                ^
+
+----------------
+token: 40
+    {kind: identifier, spelling: "int", line: 30, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  29:     // The last wall that the ball bounced from.
+  30:     field int
+                ^
+
+----------------
+token: 35
+    {kind: identifier, spelling: "int", line: 27, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  26:     // The current score.
+  27:     field int
+                ^
+
+----------------
+token: 30
+    {kind: identifier, spelling: "boolean", line: 24, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  23:     // True when the game is over
+  24:     field boolean
+                ^
+
+----------------
+token: 25
+    {kind: identifier, spelling: "int", line: 21, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  20:     // The current wall that the ball is bouncing from.
+  21:     field int
+                ^
+
+----------------
+token: 20
+    {kind: identifier, spelling: "Ball", line: 18, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  17:     // The ball
+  18:     field Ball
+                ^
+
+----------------
+token: 15
+    {kind: identifier, spelling: "Bat", line: 15, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  14:     // The bat
+  15:     field Bat
+                ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "PongGame", line: 12, column: 12}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  11:     // The singlton 
+  12:     static PongGame
+                 ^
+
+----------------
+token: 5
+    {kind: identifier, spelling: "class", line: 9, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   8:  */
+   9: class
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

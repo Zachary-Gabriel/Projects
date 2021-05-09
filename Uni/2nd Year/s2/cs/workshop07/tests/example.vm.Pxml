@@ -1,0 +1,20 @@
+<vm-class>
+    <vm-function>
+        <command>function</command>
+        <label>Silly.func</label>
+        <number>0</number>
+    </vm-function>
+    <vm-stack>
+        <command>push</command>
+        <segment>constant</segment>
+        <offset>5</offset>
+    </vm-stack>
+    <vm-stack>
+        <command>push</command>
+        <segment>static</segment>
+        <offset>6</offset>
+    </vm-stack>
+    <vm-operator>
+        <command>add</command>
+    </vm-operator>
+</vm-class>

@@ -1,0 +1,31 @@
+Read 8 tokens
+
+Token Contexts:
+
+token: 5
+    {kind: ., spelling: ".", line: 7, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+   6:  
+   7:     .
+          ^
+
+----------------
+token: 0
+    {kind: identifier, spelling: "hello", line: 1, column: 2}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1:  hello
+       ^
+
+----------------

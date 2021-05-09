@@ -1,0 +1,17 @@
+Read 1 tokens
+
+Token Contexts:
+
+token: 0
+    {kind: identifier, spelling: "D", line: 1, column: 8}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1:        D
+             ^
+
+----------------

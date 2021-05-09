@@ -1,0 +1,8 @@
+{kind: for, spelling: "for", line: 1, column: 3}
+{kind: do, spelling: "do", line: 3, column: 1}
+{kind: real, spelling: "real", line: 3, column: 6}
+{kind: this, spelling: "this", line: 4, column: 9}
+{kind: do, spelling: "do", line: 5, column: 1}
+{kind: pointer, spelling: "pointer", line: 5, column: 4}
+{kind: for, spelling: "for", line: 5, column: 12}
+Read 7 tokens

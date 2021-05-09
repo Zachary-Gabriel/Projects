@@ -1,0 +1,101 @@
+Read 35 tokens
+
+Token Contexts:
+
+token: 30
+    {kind: identifier, spelling: "boolean", line: 14, column: 13}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  13:         var int i;
+  14:         var boolean
+                  ^
+
+----------------
+token: 25
+    {kind: identifier, spelling: "var", line: 13, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  12:         var String s;
+  13:         var
+              ^
+
+----------------
+token: 20
+    {kind: ;, spelling: ";", line: 11, column: 24}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  10:     function void main() {
+  11:         var char c, key;
+                             ^
+
+----------------
+token: 15
+    {kind: identifier, spelling: "var", line: 11, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  10:     function void main() {
+  11:         var
+              ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "void", line: 10, column: 14}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   9:     /** Gets input from the user and verifies its contents. */
+  10:     function void
+                   ^
+
+----------------
+token: 5
+    {kind: identifier, spelling: "class", line: 7, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   6: /** Test program for the OS Keyboard class. */
+   7: class
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

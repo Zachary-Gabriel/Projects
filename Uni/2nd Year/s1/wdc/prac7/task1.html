@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Practical Excercise 7 - Part 1</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+
+    <style>
+
+        body,#vuemain {
+            padding: 0;
+            margin: 0;
+            color: #111111;
+        }
+
+        div, header {
+            padding: 1em;
+        }
+
+        #topmenu .pure-menu-link {
+            color: #eeeeee;
+        }
+
+        #topmenu .pure-menu-link:hover {
+            color: LightSlateGrey;
+        }
+
+        header,footer {
+            border-bottom: 1px solid #444444;
+            background-color: LightSlateGrey;
+            color: #eeeeee;
+        }
+
+        footer {
+            border-top: 1px solid #444444;
+            background-color: LightSlateGrey;
+            color: #eeeeee;
+            text-align: center;
+            clear: both;
+        }
+
+        #ad img {
+            width: 24em;
+        }
+
+        #ad h2 {
+            text-align: center;
+        }
+
+        #stores img {
+            width: 6em;
+            float: right;
+            margin-left: 1em;
+        }
+
+        #items img {
+            width: 12em;
+            float: left;
+            margin-right: 1em;
+        }
+        
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="task1.js" defer></script>
+
+</head>
+
+<body>
+
+    <div id="vuemain">
+
+        <header>
+            <h1>Welcome to the WDC Store!</h1>
+            <div class="pure-menu pure-menu-horizontal">
+                <ul id="topmenu" class="pure-menu-list">
+
+                </ul>
+            </div>
+        </header>
+        
+        <div id="ad" v-if = "showad">
+            <button class="pure-button" style="float:right;" onclick="vueinst.showad = false;">close</button>
+            <img v-bind:src="image.url" v-bind:alt="image.name" onclick="vueinst.image=ads[Math.floor((Math.random() * 3))];" />
+            <h2>{{ image.name }}</h2>
+        </div>
+        
+        <div id="main" class="container" v-if = "!showad">
+
+            <div style="float:right; margin: 1em; border-left: 1px solid #111111;">
+
+                <h1>Vue is:</h1>
+                <p id="first"> {{text}} </p>
+                <button class="pure-button" onclick="vueinst.text='Awesome!';">Try again</button>
+                
+                <hr />
+                
+                <span>Nightmode:</span>
+                <div class="pure-button-group" role="group" aria-label="Nightmode">
+                    <button v-bind:class="[ 'pure-button', nightmode ? '' : 'pure-button-active' ]" v-on:click="changeColor" onclick="vueinst.nightmode = false;">OFF</button>
+                    <button v-bind:class="[ 'pure-button', nightmode ? 'pure-button-active' : '' ]" v-on:click="changeColor" onclick="vueinst.nightmode = true;">ON</button>
+                </div>
+                
+                <hr />
+                
+                <div id="stores">
+
+                </div>
+                
+            </div>
+
+            <div id="items">
+                <input type="text" /><button class="pure-button">Search</button>
+            </div>
+            
+            <div id="comments"> 
+                <textarea rows="4" cols="60" v-model="ctext" ></textarea>
+                <button class="pure-button" v-on:click = "carr.push(ctext)" >Add comment</button>
+                <p v-for = "index in carr">{{index}}</p>
+            </div>
+
+        </div>
+        
+        <footer><p>WDC Store</p></footer>
+        
+    </div>
+
+
+</body>
+
+</html>
+

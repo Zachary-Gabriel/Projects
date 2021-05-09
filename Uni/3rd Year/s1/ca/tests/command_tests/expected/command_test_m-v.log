@@ -1,0 +1,41 @@
+Memory read doubleword: address = 0000000000000000, data = 0000000000000000
+0000000000000000
+Memory read doubleword: address = 0000000000002000, data = 0000000000000000
+0000000000000000
+Memory read doubleword: address = 0000000000004000, data = 0000000000000000
+0000000000000000
+Memory read doubleword: address = 0000000000100000, data = 0000000000000000
+0000000000000000
+Memory read doubleword: address = 0000000010000000, data = 0000000000000000
+0000000000000000
+Memory read doubleword: address = 0000000080000000, data = 0000000000000000
+0000000000000000
+Memory read doubleword: address = 0010000000000000, data = 0000000000000000
+0000000000000000
+Memory read doubleword: address = f0000000f0000000, data = 0000000000000000
+0000000000000000
+Memory doublewrite word: address = 0000000000000000, data = 1716151413121110, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000000002000, data = 2726252423222120, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000000004000, data = 3736353433323130, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000000100000, data = 4746454443424140, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000010000000, data = 5756555453525150, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000080000000, data = 6766656463626160, mask = ffffffffffffffff
+Memory doublewrite word: address = 0010000000000000, data = 7776757473727170, mask = ffffffffffffffff
+Memory doublewrite word: address = f0000000f0000000, data = 8786858483828180, mask = ffffffffffffffff
+Memory read doubleword: address = 0000000000000000, data = 1716151413121110
+1716151413121110
+Memory read doubleword: address = 0000000000002000, data = 2726252423222120
+2726252423222120
+Memory read doubleword: address = 0000000000004000, data = 3736353433323130
+3736353433323130
+Memory read doubleword: address = 0000000000100000, data = 4746454443424140
+4746454443424140
+Memory read doubleword: address = 0000000010000000, data = 5756555453525150
+5756555453525150
+Memory read doubleword: address = 0000000080000000, data = 6766656463626160
+6766656463626160
+Memory read doubleword: address = 0010000000000000, data = 7776757473727170
+7776757473727170
+Memory read doubleword: address = f0000000f0000000, data = 8786858483828180
+8786858483828180
+Instructions executed: 0

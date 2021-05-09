@@ -1,0 +1,119 @@
+Read 38 tokens
+
+Token Contexts:
+
+token: 35
+    {kind: {, spelling: "{", line: 22, column: 55}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  21:     // Constructs a new square with a given location and size.
+  22:     constructor Square new(int Ax, int Ay, int Asize) {
+                                                            ^
+
+----------------
+token: 30
+    {kind: identifier, spelling: "Ay", line: 22, column: 40}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  21:     // Constructs a new square with a given location and size.
+  22:     constructor Square new(int Ax, int Ay
+                                             ^
+
+----------------
+token: 25
+    {kind: (, spelling: "(", line: 22, column: 27}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  21:     // Constructs a new square with a given location and size.
+  22:     constructor Square new(
+                                ^
+
+----------------
+token: 20
+    {kind: ;, spelling: ";", line: 19, column: 19}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  18:     // The size of the square
+  19:     field int size;
+                        ^
+
+----------------
+token: 15
+    {kind: ;, spelling: ";", line: 16, column: 19}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  15:     // Location on the screen
+  16:     field int x, y;
+                        ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "field", line: 16, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  15:     // Location on the screen
+  16:     field
+          ^
+
+----------------
+token: 5
+    {kind: adhoc_comment, spelling: "*
+ * The Square class implements a graphic square. A graphic square 
+ * has a location on the screen and a size. It also has methods 
+ * for drawing, erasing, moving on the screen, and changing its size.
+ ", line: 8, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   7: 
+   8: /**
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

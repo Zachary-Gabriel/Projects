@@ -1,0 +1,87 @@
+Read 28 tokens
+
+Token Contexts:
+
+token: 25
+    {kind: {, spelling: "{", line: 24, column: 34}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  23:     /** Constructs a new Square Game. */
+  24:     constructor SquareGame new() {
+                                       ^
+
+----------------
+token: 20
+    {kind: identifier, spelling: "constructor", line: 24, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  23:     /** Constructs a new Square Game. */
+  24:     constructor
+          ^
+
+----------------
+token: 15
+    {kind: identifier, spelling: "int", line: 21, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  20:     // The square's movement direction
+  21:     field int
+                ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "Square", line: 18, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  17:     // The square
+  18:     field Square
+                ^
+
+----------------
+token: 5
+    {kind: identifier, spelling: "class", line: 15, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  14:  */
+  15: class
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

@@ -1,0 +1,1 @@
+pushval -v 10 pushVal 9 pushval 16 pushOp ascending pop pop pop

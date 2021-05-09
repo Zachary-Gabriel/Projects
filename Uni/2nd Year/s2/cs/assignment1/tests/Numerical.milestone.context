@@ -1,0 +1,17 @@
+Read 2 tokens
+
+Token Contexts:
+
+token: 0
+    {kind: @, spelling: "@", line: 1, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+   1:         @
+              ^
+
+----------------

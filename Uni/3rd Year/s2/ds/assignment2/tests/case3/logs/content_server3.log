@@ -1,0 +1,7 @@
+Establishing connection
+Lamport time 1290
+Message sent. Terminating connection.
+Heartbeat sent. lamport-time: 1292
+Heartbeat response recieved. lamport-time: 1457
+Heartbeat sent. lamport-time: 1457
+Heartbeat response recieved. lamport-time: 1461

@@ -1,0 +1,6 @@
+84 bytes loaded, start address = 0000000000000000
+ebreak: not implemented
+Breakpoint reached at 0000000000000000
+0000000000000001
+Instructions executed: 21
+CPU cycle count: 21

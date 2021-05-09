@@ -1,0 +1,20 @@
+Memory doublewrite word: address = 0000000000000000, data = 0000001300000013, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000000000008, data = 0000001300000013, mask = ffffffffffffffff
+0000000000000000
+Memory read doubleword: address = 0000000000000000, data = 0000001300000013
+Fetch: pc = 0000000000000000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+0000000000000004
+Memory read doubleword: address = 0000000000000000, data = 0000001300000013
+Fetch: pc = 0000000000000004, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000000008, data = 0000001300000013
+Fetch: pc = 0000000000000008, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000000008, data = 0000001300000013
+Fetch: pc = 000000000000000c, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+0000000000000010
+Error: misaligned pc
+0000000000000002
+Instructions executed: 4

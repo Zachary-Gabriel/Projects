@@ -1,0 +1,242 @@
+Read 81 tokens
+
+Token Contexts:
+
+token: 80
+    {kind: identifier, spelling: "x", line: 32, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  31:     constructor Ball new(int Ax, int Ay, int AleftWall, int ArightWall, int AtopWall, int AbottomWall) {        
+  32:     let x
+              ^
+
+----------------
+token: 75
+    {kind: identifier, spelling: "int", line: 31, column: 87}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  30:      *  and the locations of the walls. */
+  31:     constructor Ball new(int Ax, int Ay, int AleftWall, int ArightWall, int AtopWall, int
+                                                                                            ^
+
+----------------
+token: 70
+    {kind: identifier, spelling: "ArightWall", line: 31, column: 61}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  30:      *  and the locations of the walls. */
+  31:     constructor Ball new(int Ax, int Ay, int AleftWall, int ArightWall
+                                                                  ^
+
+----------------
+token: 65
+    {kind: ,, spelling: ",", line: 31, column: 40}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  30:      *  and the locations of the walls. */
+  31:     constructor Ball new(int Ax, int Ay,
+                                             ^
+
+----------------
+token: 60
+    {kind: identifier, spelling: "int", line: 31, column: 26}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  30:      *  and the locations of the walls. */
+  31:     constructor Ball new(int
+                               ^
+
+----------------
+token: 55
+    {kind: adhoc_comment, spelling: "* Constructs a new Ball with a given initial location
+     *  and the locations of the walls. ", line: 29, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  28: 
+  29:     /** Constructs a new Ball with a given initial location
+          ^
+
+----------------
+token: 50
+    {kind: eol_comment, spelling: " last wall that the ball was bounced from", line: 26, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  25: 
+  26:     // last wall that the ball was bounced from
+          ^
+
+----------------
+token: 45
+    {kind: ,, spelling: ",", line: 24, column: 34}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  23:     // wall locations
+  24:     field int leftWall, rightWall,
+                                       ^
+
+----------------
+token: 40
+    {kind: identifier, spelling: "field", line: 24, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  23:     // wall locations
+  24:     field
+          ^
+
+----------------
+token: 35
+    {kind: identifier, spelling: "positivex", line: 21, column: 27}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  20:     field int d, straightD, diagonalD;
+  21:     field boolean invert, positivex
+                                ^
+
+----------------
+token: 30
+    {kind: ;, spelling: ";", line: 20, column: 38}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  19:     // Used for straight line movement computation
+  20:     field int d, straightD, diagonalD;
+                                           ^
+
+----------------
+token: 25
+    {kind: identifier, spelling: "d", line: 20, column: 15}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  19:     // Used for straight line movement computation
+  20:     field int d
+                    ^
+
+----------------
+token: 20
+    {kind: identifier, spelling: "lengthy", line: 17, column: 24}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  16:     // Distance of last destination
+  17:     field int lengthx, lengthy
+                             ^
+
+----------------
+token: 15
+    {kind: eol_comment, spelling: " Distance of last destination", line: 16, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  15: 
+  16:     // Distance of last destination
+          ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "int", line: 14, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  13:     // The ball's screen location (in pixels)
+  14:     field int
+                ^
+
+----------------
+token: 5
+    {kind: identifier, spelling: "class", line: 11, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  10:  */
+  11: class
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

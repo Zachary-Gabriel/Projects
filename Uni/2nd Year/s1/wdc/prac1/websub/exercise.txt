@@ -1,0 +1,1 @@
+I will always commit my work in Subversion. That way, if my computer crashes, I lose my USB, or my pet eats it, I can still recover the last committed version. If I lose my work because I didn't use SVN, I won't get an extension because I should have used SVN.

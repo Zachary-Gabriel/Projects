@@ -1,0 +1,8 @@
+
+***** Fatal error!
+error: 
+ 2:         push constant 5
+ 3:         push temporary 
+                 ^
+Found token "temporary" but expected "vm_segment"
+

@@ -1,0 +1,147 @@
+h1{
+	font-family: Raleway, "sans serif";
+}
+h2{
+	font-family:Raleway,"sans serif";
+	text-align: left;
+}
+h4{
+	font-family:Raleway,"sans serif";
+	font-weight: normal;
+	font-style: italic;
+	text-decoration: underline;
+
+}
+p{
+	font-family:"Noto Serif", "Serif";
+}
+#fa{
+	color:#BFCFD4;
+	text-align:center;
+}
+#quote{
+	font-family:"Raleway", "serif";
+	word-spacing: 0.2em;
+	line-height: 1.5;
+	color: dimgrey;
+	text-align: justify;
+}
+a{
+	color: darkgreen;
+}
+mark{
+	color: darkblue;
+	background-color: pink;
+}
+del{
+	color: grey;
+}
+pre{
+	font-family:"monospace";
+}
+h3{
+	color: rgba(0,0,139,0.8);
+}
+
+pre.transparent-text{
+	color:rgba(128,128,128,0.5);
+}
+body{
+	background-color: ghostwhite;
+	background-image: url(rect.png),url(rect.png),url(rect.png);
+	background-size: 97px,67px,37px;
+	background-repeat:repeat;
+}
+span.fancy{
+	font-family:cursive;
+}
+span.blue{
+	color:blue;
+}
+#content{
+	background-color: white;
+	border-style: solid;
+	border-color: darkgrey;
+	border-width: 1px;
+	border-radius: 8px;
+}
+hr{
+	border-color:#9FEFE4;
+}
+span.red-border{
+	border-style: solid;
+	border-color: red;
+	border-width: 1px;
+}
+span.red-outline{
+	outline-style: solid;
+	outline-color: red;
+	outline-width: 1px;
+}
+div.box1{
+	border-style: solid;
+	border-color: red;
+	border-width: 1px;
+}
+div.box2{
+	border-style: solid;
+	border-color: blue;
+	border-width: 1px;
+}
+div.box3{
+	border-style: solid;
+	border-bottom-style: none;
+	border-color: red;
+	border-width: 1px;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+div.box4{
+	border-style: solid;
+	border-color: blue;
+	border-width: 1px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+#nest1{
+	background-color: blue;
+	border-style: solid;
+	border-color: red;
+	border-width: 1px;
+	
+}
+#nest2{
+	text-align : right;
+	background-color: yellow;
+	border-style: solid;
+	border-color: red;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 20px;
+	margin-left: 20px;
+
+	padding: 12px;
+	border-width: 1px;
+	width: 674px;
+	height: 174px;
+}
+
+#nest3{
+	background-color: blue;
+	border-style: solid;
+	border-color: red;
+	border-width: 1px;
+	margin-top: 20px;
+}
+#nest4{
+	text-align : right;
+	background-color: yellow;
+	border-style: solid;
+	border-color: red;
+	border-width: 1px;
+
+	padding: 12px;
+	margin: auto;
+	width: 374px;
+	height: 374px;
+}

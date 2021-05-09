@@ -1,0 +1,45 @@
+Memory doublewrite word: address = 0000000000000000, data = 0000001300000013, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000000000008, data = 0000001300000013, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000000002000, data = 0000001300000013, mask = ffffffffffffffff
+Memory doublewrite word: address = 0000000000002008, data = 0000001300000013, mask = ffffffffffffffff
+Breakpoint set at 0000000000002004
+Memory read doubleword: address = 0000000000002000, data = 0000001300000013
+Fetch: pc = 0000000000002000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000002000, data = 0000001300000013
+Fetch: pc = 0000000000002004, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000002008, data = 0000001300000013
+Fetch: pc = 0000000000002008, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000002008, data = 0000001300000013
+Fetch: pc = 000000000000200c, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+0000000000002010
+Memory read doubleword: address = 0000000000002000, data = 0000001300000013
+Fetch: pc = 0000000000002000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Breakpoint reached at 0000000000002004
+0000000000002004
+Breakpoint set at 0000000000000004
+Memory read doubleword: address = 0000000000002000, data = 0000001300000013
+Fetch: pc = 0000000000002000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000002000, data = 0000001300000013
+Fetch: pc = 0000000000002004, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000002008, data = 0000001300000013
+Fetch: pc = 0000000000002008, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+000000000000200c
+Memory read doubleword: address = 0000000000000000, data = 0000001300000013
+Fetch: pc = 0000000000000000, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000000000, data = 0000001300000013
+Fetch: pc = 0000000000000004, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Memory read doubleword: address = 0000000000000008, data = 0000001300000013
+Fetch: pc = 0000000000000008, ir = 00000013
+addi: rd = 0, rs1 = 0, immed_I = 0000000000000000
+000000000000000c
+Instructions executed: 11

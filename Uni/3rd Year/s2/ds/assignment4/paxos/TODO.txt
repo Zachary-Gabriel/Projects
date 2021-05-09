@@ -1,0 +1,51 @@
+*** Missing - Major ***
+
+* Topology management not implemented, acceptor 1 is assumed to be the leader.
+  Requires some sort of failure detection.
+
+* Multicaster and ordinary acceptors have different startup routines.
+  Promoting a regular acceptor to leader/multicaster is not implemented.
+
+* Leader change implemented but never tested
+
+* Incarnation number of leader only partially implemented and never tested.
+
+* Learner joining later (i.e. after failure) will request all previous commands
+
+* Acceptor joining later (i.e. after failure) will reject any request, since it's too far in the future (This is specific to the current in-memory storage)
+
+* Since senders use 'connect' and assert even for unreliable sockets, if processes are started in the wrong order (and the receiver is not listening yet) they will crash and exit
+
+*** Missing - Minor ***
+
+* Learners sending 'missing' requests to acceptors, to reduce the load on multicaster
+  Maybe it's not a good idea if the message was lost by more than one learner.
+
+* Handling of p1 and p2 messages does not check wether instance is too far ahead.
+
+* Digitalize statemachine graphs
+
+
+*** Improvements ***
+
+* Better Phase 1 range retry (Leader executes P1 with range only the first time, on timeout will switch to normal mode)
+
+* Make all functions static except API ones
+
+* Add hi-level pseudocode of acceptor, learner, multicaster
+
+* Improve net_send API to save memcopy.
+  - 'net_append' interface could avoid one extra copy when composing a multipart message
+  - 'net_send_direct' interface to bypass buffering
+
+* Add destroy call for network managers
+
+
+*** Missing - Tests ***
+* udp_test3 uses always the same port, no wonder later return NULL!
+
+* Add a net test that fills the buffer (and has to flush automatically)
+
+* Add topology manager tests
+
+

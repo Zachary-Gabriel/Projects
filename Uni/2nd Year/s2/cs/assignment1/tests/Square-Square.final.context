@@ -1,0 +1,115 @@
+Read 37 tokens
+
+Token Contexts:
+
+token: 35
+    {kind: identifier, spelling: "let", line: 21, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  20:     constructor Square new(int Ax, int Ay, int Asize) {
+  21:         let
+              ^
+
+----------------
+token: 30
+    {kind: ,, spelling: ",", line: 20, column: 42}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  19:     /** Constructs a new square with a given location and size. */
+  20:     constructor Square new(int Ax, int Ay,
+                                               ^
+
+----------------
+token: 25
+    {kind: identifier, spelling: "int", line: 20, column: 28}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  19:     /** Constructs a new square with a given location and size. */
+  20:     constructor Square new(int
+                                 ^
+
+----------------
+token: 20
+    {kind: adhoc_comment, spelling: "* Constructs a new square with a given location and size. ", line: 19, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  18: 
+  19:     /** Constructs a new square with a given location and size. */
+          ^
+
+----------------
+token: 15
+    {kind: eol_comment, spelling: " The size of the square", line: 16, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  15: 
+  16:     // The size of the square
+          ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "int", line: 14, column: 11}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  13:     // Location on the screen
+  14:     field int
+                ^
+
+----------------
+token: 5
+    {kind: identifier, spelling: "class", line: 11, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  10:  */
+  11: class
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

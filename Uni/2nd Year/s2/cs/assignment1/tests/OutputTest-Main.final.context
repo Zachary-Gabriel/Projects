@@ -1,0 +1,73 @@
+Read 21 tokens
+
+Token Contexts:
+
+token: 20
+    {kind: identifier, spelling: "s", line: 14, column: 13}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  13:     
+  14:         let s
+                  ^
+
+----------------
+token: 15
+    {kind: identifier, spelling: "var", line: 12, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  11:     function void main() {
+  12:         var
+              ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "void", line: 11, column: 14}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  10:      *  methods of the Output class. */
+  11:     function void
+                   ^
+
+----------------
+token: 5
+    {kind: identifier, spelling: "class", line: 7, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   6: /** Test program for the OS Output class. */
+   7: class
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

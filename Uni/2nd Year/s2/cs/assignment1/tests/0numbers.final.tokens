@@ -1,0 +1,18 @@
+{kind: integer, spelling: "0", line: 1, column: 2}
+{kind: float, spelling: "4.3e+0", line: 1, column: 4}
+{kind: float, spelling: "3.6e-89", line: 1, column: 8}
+{kind: float, spelling: "12125.34e+9", line: 1, column: 16}
+{kind: float, spelling: "888e+0", line: 1, column: 27}
+{kind: integer, spelling: "34", line: 1, column: 33}
+{kind: integer, spelling: "0", line: 1, column: 36}
+{kind: integer, spelling: "0", line: 1, column: 37}
+{kind: float, spelling: "0.000000e-0", line: 1, column: 38}
+{kind: integer, spelling: "0", line: 1, column: 49}
+{kind: integer, spelling: "0", line: 1, column: 50}
+{kind: integer, spelling: "0", line: 1, column: 51}
+{kind: integer, spelling: "8", line: 1, column: 52}
+{kind: float, spelling: "235.0e+5", line: 1, column: 54}
+{kind: float, spelling: "41.4e+0", line: 1, column: 61}
+{kind: float, spelling: "11.0e+0", line: 1, column: 66}
+{kind: integer, spelling: "12", line: 1, column: 70}
+Read 17 tokens

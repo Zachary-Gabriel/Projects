@@ -1,0 +1,29 @@
+{kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+{kind: eol_comment, spelling: " and the book "The Elements of Computing Systems"", line: 2, column: 1}
+{kind: eol_comment, spelling: " by Nisan and Schocken, MIT Press.", line: 3, column: 1}
+{kind: eol_comment, spelling: " File name: projects/11/Pong/Main.jack", line: 4, column: 1}
+{kind: adhoc_comment, spelling: "*
+ * The main class of the Pong game.
+ ", line: 6, column: 1}
+{kind: identifier, spelling: "class", line: 9, column: 1}
+{kind: identifier, spelling: "Main", line: 9, column: 7}
+{kind: {, spelling: "{", line: 9, column: 12}
+{kind: adhoc_comment, spelling: "* Initializes the Pong game and starts it. ", line: 11, column: 5}
+{kind: identifier, spelling: "function", line: 12, column: 5}
+{kind: identifier, spelling: "void", line: 12, column: 14}
+{kind: identifier, spelling: "main", line: 12, column: 19}
+{kind: (, spelling: "(", line: 12, column: 23}
+{kind: ), spelling: ")", line: 12, column: 24}
+{kind: {, spelling: "{", line: 12, column: 26}
+{kind: identifier, spelling: "var", line: 13, column: 9}
+{kind: identifier, spelling: "PongGame", line: 13, column: 13}
+{kind: identifier, spelling: "game", line: 13, column: 22}
+{kind: ;, spelling: ";", line: 13, column: 26}
+{kind: do, spelling: "do", line: 15, column: 5}
+{kind: identifier, spelling: "PongGame.newInstance", line: 15, column: 8}
+{kind: (, spelling: "(", line: 15, column: 28}
+{kind: ), spelling: ")", line: 15, column: 29}
+{kind: ;, spelling: ";", line: 15, column: 30}
+{kind: identifier, spelling: "let", line: 16, column: 9}
+{kind: identifier, spelling: "game", line: 16, column: 13}
+Read 26 tokens

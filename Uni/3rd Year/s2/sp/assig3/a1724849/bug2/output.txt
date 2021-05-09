@@ -1,0 +1,16 @@
+bug2: (random input 13)
+output ending:
+a: 2178881536
+b: 503713792
+c: 503779328
+number: 10
+a =b,c, size:4157
+calloc
+
+should be: (using "make proper")
+a: 4005743776
+b: 4005743776
+c: 4005732800
+number: 16
+c =a,b, size:2687
+free

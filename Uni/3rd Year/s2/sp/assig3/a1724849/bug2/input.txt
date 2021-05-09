@@ -1,0 +1,3 @@
+cc -o driver driver.c spalloc.o
+./driver
+13

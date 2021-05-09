@@ -1,0 +1,79 @@
+
+compiled_test_fib.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	0010011b          	addiw	sp,zero,1
+   4:	01f11113          	slli	sp,sp,0x1f
+   8:	00000413          	li	s0,0
+   c:	0a8000ef          	jal	ra,b4 <main>
+  10:	00000067          	jr	zero # 0 <_start>
+
+0000000000000014 <fib>:
+  14:	fd010113          	addi	sp,sp,-48
+  18:	02113423          	sd	ra,40(sp)
+  1c:	02813023          	sd	s0,32(sp)
+  20:	00913c23          	sd	s1,24(sp)
+  24:	03010413          	addi	s0,sp,48
+  28:	00050793          	mv	a5,a0
+  2c:	fcf42e23          	sw	a5,-36(s0)
+  30:	fdc42783          	lw	a5,-36(s0)
+  34:	0007879b          	sext.w	a5,a5
+  38:	00079663          	bnez	a5,44 <fib+0x30>
+  3c:	00000793          	li	a5,0
+  40:	05c0006f          	j	9c <fib+0x88>
+  44:	fdc42783          	lw	a5,-36(s0)
+  48:	0007871b          	sext.w	a4,a5
+  4c:	00100793          	li	a5,1
+  50:	00f71663          	bne	a4,a5,5c <fib+0x48>
+  54:	00100793          	li	a5,1
+  58:	0440006f          	j	9c <fib+0x88>
+  5c:	fdc42783          	lw	a5,-36(s0)
+  60:	fff7879b          	addiw	a5,a5,-1
+  64:	0007879b          	sext.w	a5,a5
+  68:	00078513          	mv	a0,a5
+  6c:	fa9ff0ef          	jal	ra,14 <fib>
+  70:	00050793          	mv	a5,a0
+  74:	0007849b          	sext.w	s1,a5
+  78:	fdc42783          	lw	a5,-36(s0)
+  7c:	ffe7879b          	addiw	a5,a5,-2
+  80:	0007879b          	sext.w	a5,a5
+  84:	00078513          	mv	a0,a5
+  88:	f8dff0ef          	jal	ra,14 <fib>
+  8c:	00050793          	mv	a5,a0
+  90:	0007879b          	sext.w	a5,a5
+  94:	00f487bb          	addw	a5,s1,a5
+  98:	0007879b          	sext.w	a5,a5
+  9c:	00078513          	mv	a0,a5
+  a0:	02813083          	ld	ra,40(sp)
+  a4:	02013403          	ld	s0,32(sp)
+  a8:	01813483          	ld	s1,24(sp)
+  ac:	03010113          	addi	sp,sp,48
+  b0:	00008067          	ret
+
+00000000000000b4 <main>:
+  b4:	fe010113          	addi	sp,sp,-32
+  b8:	00113c23          	sd	ra,24(sp)
+  bc:	00813823          	sd	s0,16(sp)
+  c0:	02010413          	addi	s0,sp,32
+  c4:	01900793          	li	a5,25
+  c8:	fef42623          	sw	a5,-20(s0)
+  cc:	fec42783          	lw	a5,-20(s0)
+  d0:	00078513          	mv	a0,a5
+  d4:	f41ff0ef          	jal	ra,14 <fib>
+  d8:	00050793          	mv	a5,a0
+  dc:	0007879b          	sext.w	a5,a5
+  e0:	00078713          	mv	a4,a5
+  e4:	000127b7          	lui	a5,0x12
+  e8:	51178793          	addi	a5,a5,1297 # 12511 <__global_pointer$+0x10c01>
+  ec:	40f707b3          	sub	a5,a4,a5
+  f0:	00f037b3          	snez	a5,a5
+  f4:	0ff7f793          	andi	a5,a5,255
+  f8:	0007879b          	sext.w	a5,a5
+  fc:	00078513          	mv	a0,a5
+ 100:	01813083          	ld	ra,24(sp)
+ 104:	01013403          	ld	s0,16(sp)
+ 108:	02010113          	addi	sp,sp,32
+ 10c:	00008067          	ret

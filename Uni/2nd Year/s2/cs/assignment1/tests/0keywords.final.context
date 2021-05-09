@@ -1,0 +1,31 @@
+Read 7 tokens
+
+Token Contexts:
+
+token: 5
+    {kind: pointer, spelling: "pointer", line: 5, column: 4}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns true
+    token_is_in(token,symbol) returns false
+token_context:
+   4:         this
+   5: do pointer
+         ^
+
+----------------
+token: 0
+    {kind: for, spelling: "for", line: 1, column: 3}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns true
+    token_is_in(token,symbol) returns false
+token_context:
+   1:   for
+        ^
+
+----------------

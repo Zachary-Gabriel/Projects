@@ -1,0 +1,647 @@
+Read 227 tokens
+
+Token Contexts:
+
+token: 225
+    {kind: }, spelling: "}", line: 35, column: 5}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  34:         return;
+  35:     }
+          ^
+
+----------------
+token: 220
+    {kind: integer, spelling: "20", line: 32, column: 39}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  31:         do Screen.drawLine(106,60,86,60);       
+  32:         do Screen.drawLine(117,35,102,20
+                                            ^
+
+----------------
+token: 215
+    {kind: ,, spelling: ",", line: 32, column: 31}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  31:         do Screen.drawLine(106,60,86,60);       
+  32:         do Screen.drawLine(117,
+                                    ^
+
+----------------
+token: 210
+    {kind: ;, spelling: ";", line: 31, column: 41}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  30:         do Screen.drawLine(117,85,102,100);       
+  31:         do Screen.drawLine(106,60,86,60);
+                                              ^
+
+----------------
+token: 205
+    {kind: ,, spelling: ",", line: 31, column: 34}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  30:         do Screen.drawLine(117,85,102,100);       
+  31:         do Screen.drawLine(106,60,
+                                       ^
+
+----------------
+token: 200
+    {kind: identifier, spelling: "Screen.drawLine", line: 31, column: 12}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  30:         do Screen.drawLine(117,85,102,100);       
+  31:         do Screen.drawLine
+                 ^
+
+----------------
+token: 195
+    {kind: ,, spelling: ",", line: 30, column: 38}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  29:         do Screen.drawLine(140,94,140,114);       
+  30:         do Screen.drawLine(117,85,102,
+                                           ^
+
+----------------
+token: 190
+    {kind: integer, spelling: "117", line: 30, column: 28}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  29:         do Screen.drawLine(140,94,140,114);       
+  30:         do Screen.drawLine(117
+                                 ^
+
+----------------
+token: 185
+    {kind: ), spelling: ")", line: 29, column: 42}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  28:         do Screen.drawLine(163,85,178,100);       
+  29:         do Screen.drawLine(140,94,140,114)
+                                               ^
+
+----------------
+token: 180
+    {kind: integer, spelling: "94", line: 29, column: 32}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  28:         do Screen.drawLine(163,85,178,100);       
+  29:         do Screen.drawLine(140,94
+                                     ^
+
+----------------
+token: 175
+    {kind: do, spelling: "do", line: 29, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns true
+    token_is_in(token,symbol) returns false
+token_context:
+  28:         do Screen.drawLine(163,85,178,100);       
+  29:         do
+              ^
+
+----------------
+token: 170
+    {kind: integer, spelling: "178", line: 28, column: 35}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  27:         do Screen.drawLine(174,60,194,60);       
+  28:         do Screen.drawLine(163,85,178
+                                        ^
+
+----------------
+token: 165
+    {kind: (, spelling: "(", line: 28, column: 27}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  27:         do Screen.drawLine(174,60,194,60);       
+  28:         do Screen.drawLine(
+                                ^
+
+----------------
+token: 160
+    {kind: integer, spelling: "60", line: 27, column: 39}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  26:         do Screen.drawLine(163,35,178,20);       
+  27:         do Screen.drawLine(174,60,194,60
+                                            ^
+
+----------------
+token: 155
+    {kind: ,, spelling: ",", line: 27, column: 31}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  26:         do Screen.drawLine(163,35,178,20);       
+  27:         do Screen.drawLine(174,
+                                    ^
+
+----------------
+token: 150
+    {kind: ;, spelling: ";", line: 26, column: 42}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  25:         do Screen.drawLine(140,26, 140, 6);       
+  26:         do Screen.drawLine(163,35,178,20);
+                                               ^
+
+----------------
+token: 145
+    {kind: ,, spelling: ",", line: 26, column: 34}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  25:         do Screen.drawLine(140,26, 140, 6);       
+  26:         do Screen.drawLine(163,35,
+                                       ^
+
+----------------
+token: 140
+    {kind: identifier, spelling: "Screen.drawLine", line: 26, column: 12}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  25:         do Screen.drawLine(140,26, 140, 6);       
+  26:         do Screen.drawLine
+                 ^
+
+----------------
+token: 135
+    {kind: ,, spelling: ",", line: 25, column: 39}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  24:         do Screen.drawCircle(140,60,30);          // sun
+  25:         do Screen.drawLine(140,26, 140,
+                                            ^
+
+----------------
+token: 130
+    {kind: integer, spelling: "140", line: 25, column: 28}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  24:         do Screen.drawCircle(140,60,30);          // sun
+  25:         do Screen.drawLine(140
+                                 ^
+
+----------------
+token: 125
+    {kind: ;, spelling: ";", line: 24, column: 40}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  23: 
+  24:         do Screen.drawCircle(140,60,30);
+                                             ^
+
+----------------
+token: 120
+    {kind: ,, spelling: ",", line: 24, column: 33}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  23: 
+  24:         do Screen.drawCircle(140,
+                                      ^
+
+----------------
+token: 115
+    {kind: eol_comment, spelling: " roof", line: 22, column: 51}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  21:         do Screen.drawLine(280,90,345,35);        // roof
+  22:         do Screen.drawLine(345,35,410,90);        // roof
+                                                        ^
+
+----------------
+token: 110
+    {kind: integer, spelling: "410", line: 22, column: 35}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  21:         do Screen.drawLine(280,90,345,35);        // roof
+  22:         do Screen.drawLine(345,35,410
+                                        ^
+
+----------------
+token: 105
+    {kind: (, spelling: "(", line: 22, column: 27}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  21:         do Screen.drawLine(280,90,345,35);        // roof
+  22:         do Screen.drawLine(
+                                ^
+
+----------------
+token: 100
+    {kind: ), spelling: ")", line: 21, column: 41}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  20:         do Screen.drawCircle(360,170,3);          // door handle
+  21:         do Screen.drawLine(280,90,345,35)
+                                              ^
+
+----------------
+token: 95
+    {kind: integer, spelling: "90", line: 21, column: 32}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  20:         do Screen.drawCircle(360,170,3);          // door handle
+  21:         do Screen.drawLine(280,90
+                                     ^
+
+----------------
+token: 90
+    {kind: do, spelling: "do", line: 21, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns true
+    token_is_in(token,symbol) returns false
+token_context:
+  20:         do Screen.drawCircle(360,170,3);          // door handle
+  21:         do
+              ^
+
+----------------
+token: 85
+    {kind: ,, spelling: ",", line: 20, column: 37}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  19:         do Screen.setColor(true); 
+  20:         do Screen.drawCircle(360,170,
+                                          ^
+
+----------------
+token: 80
+    {kind: identifier, spelling: "Screen.drawCircle", line: 20, column: 12}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  19:         do Screen.setColor(true); 
+  20:         do Screen.drawCircle
+                 ^
+
+----------------
+token: 75
+    {kind: (, spelling: "(", line: 19, column: 27}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  18:         
+  19:         do Screen.setColor(
+                                ^
+
+----------------
+token: 70
+    {kind: ), spelling: ")", line: 17, column: 48}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  16:         do Screen.drawRectangle(350,120,390,219); // door
+  17:         do Screen.drawRectangle(292,120,332,150)
+                                                     ^
+
+----------------
+token: 65
+    {kind: integer, spelling: "120", line: 17, column: 37}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  16:         do Screen.drawRectangle(350,120,390,219); // door
+  17:         do Screen.drawRectangle(292,120
+                                          ^
+
+----------------
+token: 60
+    {kind: do, spelling: "do", line: 17, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns true
+    token_is_in(token,symbol) returns false
+token_context:
+  16:         do Screen.drawRectangle(350,120,390,219); // door
+  17:         do
+              ^
+
+----------------
+token: 55
+    {kind: ,, spelling: ",", line: 16, column: 44}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  15:         do Screen.setColor(false); 
+  16:         do Screen.drawRectangle(350,120,390,
+                                                 ^
+
+----------------
+token: 50
+    {kind: integer, spelling: "350", line: 16, column: 33}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  15:         do Screen.setColor(false); 
+  16:         do Screen.drawRectangle(350
+                                      ^
+
+----------------
+token: 45
+    {kind: ), spelling: ")", line: 15, column: 33}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  14:         
+  15:         do Screen.setColor(false)
+                                      ^
+
+----------------
+token: 40
+    {kind: eol_comment, spelling: " house", line: 13, column: 51}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  12:         do Screen.drawLine(0,220,511,220);        // base line
+  13:         do Screen.drawRectangle(280,90,410,220);  // house
+                                                        ^
+
+----------------
+token: 35
+    {kind: integer, spelling: "410", line: 13, column: 40}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  12:         do Screen.drawLine(0,220,511,220);        // base line
+  13:         do Screen.drawRectangle(280,90,410
+                                             ^
+
+----------------
+token: 30
+    {kind: (, spelling: "(", line: 13, column: 32}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  12:         do Screen.drawLine(0,220,511,220);        // base line
+  13:         do Screen.drawRectangle(
+                                     ^
+
+----------------
+token: 25
+    {kind: ), spelling: ")", line: 12, column: 41}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns true
+token_context:
+  11:     
+  12:         do Screen.drawLine(0,220,511,220)
+                                              ^
+
+----------------
+token: 20
+    {kind: integer, spelling: "220", line: 12, column: 30}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns true
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+  11:     
+  12:         do Screen.drawLine(0,220
+                                   ^
+
+----------------
+token: 15
+    {kind: do, spelling: "do", line: 12, column: 9}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns true
+    token_is_in(token,symbol) returns false
+token_context:
+  11:     
+  12:         do
+              ^
+
+----------------
+token: 10
+    {kind: identifier, spelling: "void", line: 10, column: 14}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   9:     /** Draws a sample pictue on the screen using lines and circles. */
+  10:     function void
+                   ^
+
+----------------
+token: 5
+    {kind: identifier, spelling: "class", line: 7, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns true
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   6: /** Test program for the OS Screen class. */
+   7: class
+      ^
+
+----------------
+token: 0
+    {kind: eol_comment, spelling: " This file is part of www.nand2tetris.org", line: 1, column: 1}
+token group memberships:
+    token_is_in(token,identifier) returns false
+    token_is_in(token,integer) returns false
+    token_is_in(token,float) returns false
+    token_is_in(token,keyword) returns false
+    token_is_in(token,symbol) returns false
+token_context:
+   1: // This file is part of www.nand2tetris.org
+      ^
+
+----------------

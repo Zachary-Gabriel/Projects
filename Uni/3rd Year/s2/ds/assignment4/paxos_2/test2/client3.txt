@@ -1,0 +1,48 @@
+16 Nov 20:56:58. Connect to 10.20.31.142:8800
+16 Nov 20:56:58. Connect to 10.20.31.142:8801
+16 Nov 20:56:58. Connect to 10.20.31.142:8802
+16 Nov 20:56:58. Connect to 10.20.31.142:8803
+16 Nov 20:56:58. Connect to 10.20.31.142:8804
+16 Nov 20:56:58. Connect to 10.20.31.142:8805
+16 Nov 20:56:58. Connect to 10.20.31.142:8806
+16 Nov 20:56:58. Connect to 10.20.31.142:8807
+16 Nov 20:56:58. Connect to 10.20.31.142:8808
+Connected to proposer
+16 Nov 20:56:58. Connected to 10.20.31.142:8801
+16 Nov 20:56:58. Connected to 10.20.31.142:8803
+16 Nov 20:56:58. Connected to 10.20.31.142:8804
+16 Nov 20:56:58. Connected to 10.20.31.142:8806
+16 Nov 20:56:58. Connected to 10.20.31.142:8807
+16 Nov 20:56:58. Connected to 10.20.31.142:8808
+1762 value/sec, 1.29 Mbps, latency min 349 us max 45344 us avg 754 us
+1923 value/sec, 1.41 Mbps, latency min 342 us max 1856 us avg 457 us
+16 Nov 20:57:00. Connection refused (10.20.31.142:8802)
+16 Nov 20:57:00. Connection refused (10.20.31.142:8800)
+16 Nov 20:57:00. Connection refused (10.20.31.142:8805)
+1817 value/sec, 1.33 Mbps, latency min 352 us max 35232 us avg 749 us
+1709 value/sec, 1.25 Mbps, latency min 342 us max 41878 us avg 640 us
+16 Nov 20:57:02. Connect to 10.20.31.142:8802
+16 Nov 20:57:02. Connect to 10.20.31.142:8805
+16 Nov 20:57:02. Connect to 10.20.31.142:8800
+1805 value/sec, 1.32 Mbps, latency min 341 us max 32939 us avg 560 us
+1875 value/sec, 1.37 Mbps, latency min 343 us max 34452 us avg 588 us
+16 Nov 20:57:04. Connection refused (10.20.31.142:8802)
+16 Nov 20:57:04. Connection refused (10.20.31.142:8800)
+16 Nov 20:57:04. Connection refused (10.20.31.142:8805)
+1894 value/sec, 1.39 Mbps, latency min 339 us max 17314 us avg 494 us
+1861 value/sec, 1.36 Mbps, latency min 337 us max 35517 us avg 581 us
+16 Nov 20:57:06. Connect to 10.20.31.142:8802
+16 Nov 20:57:06. Connect to 10.20.31.142:8800
+16 Nov 20:57:06. Connect to 10.20.31.142:8805
+1809 value/sec, 1.32 Mbps, latency min 350 us max 33811 us avg 657 us
+1729 value/sec, 1.27 Mbps, latency min 356 us max 28279 us avg 566 us
+16 Nov 20:57:08. Connection refused (10.20.31.142:8802)
+16 Nov 20:57:08. Connection refused (10.20.31.142:8800)
+16 Nov 20:57:08. Connection refused (10.20.31.142:8805)
+1803 value/sec, 1.32 Mbps, latency min 345 us max 3105 us avg 545 us
+1698 value/sec, 1.24 Mbps, latency min 353 us max 57400 us avg 867 us
+16 Nov 20:57:10. Connect to 10.20.31.142:8802
+16 Nov 20:57:10. Connect to 10.20.31.142:8800
+16 Nov 20:57:10. Connect to 10.20.31.142:8805
+1801 value/sec, 1.32 Mbps, latency min 342 us max 26404 us avg 813 us
+1790 value

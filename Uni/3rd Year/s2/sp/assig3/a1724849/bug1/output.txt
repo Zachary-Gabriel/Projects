@@ -1,0 +1,16 @@
+bug1: (random input 0)
+output ending:
+a: 1485705216
+b: 1485639680
+c: 2674803712
+number: 6
+c =c,b, size:6910
+realloc
+
+should end: (using "make proper")
+a: 3171368240
+b: 3171364688
+c: 3171330416
+number: 34
+b =a,c, size:5227
+free
