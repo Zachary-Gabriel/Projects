@@ -1,0 +1,15 @@
+{
+    "java.project.sourcePaths": [
+        "",
+        "src",
+        "Game",
+        "Pieces",
+        "Tests",
+        "GUI",
+        "assets",
+        "bin"
+    ],
+    "maven.view": "flat",
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.dependency.syncWithFolderExplorer": true
+}
