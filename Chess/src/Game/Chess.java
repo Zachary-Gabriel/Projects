@@ -8,7 +8,6 @@ public class Chess
         Board board = new Board();
         board.initial_position ();
 
-        GUI_Board gui = new GUI_Board(board);
+        // new GUI(board);
     }
-    
 }

@@ -1,1 +1,1 @@
-Java Chess Project.
+Where all of my source code for the project is.

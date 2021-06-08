@@ -1,0 +1,1 @@
+Folder containing external libraries required for this project to run.
