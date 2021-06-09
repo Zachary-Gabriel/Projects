@@ -39,41 +39,41 @@ public class Board
         // Pawns
         for (int i = 0; i < 8; ++i)
         {
-            board[1][i] = new Pawn (1, i, Side.WHITE);
-            board[6][i] = new Pawn (6, i, Side.BLACK);
+            board[i][1] = new Pawn (i, 1, Side.WHITE);
+            board[i][6] = new Pawn (i, 6, Side.BLACK);
         }
 
         // White Rooks
         board[0][0] = new Rook (0, 0, Side.WHITE);
-        board[0][7] = new Rook (0, 7, Side.WHITE);
+        board[7][0] = new Rook (7, 0, Side.WHITE);
 
         // Black Rooks
-        board[7][0] = new Rook (7, 0, Side.BLACK);
+        board[0][7] = new Rook (0, 7, Side.BLACK);
         board[7][7] = new Rook (7, 7, Side.BLACK);
 
         // White Knights
-        board[0][1] = new Knight (0, 1, Side.WHITE);
-        board[0][6] = new Knight (0, 6, Side.WHITE);
+        board[1][0] = new Knight (1, 0, Side.WHITE);
+        board[6][0] = new Knight (6, 0, Side.WHITE);
 
         // Black Knights
-        board[7][1] = new Knight (7, 1, Side.BLACK);
-        board[7][6] = new Knight (7, 6, Side.BLACK);
+        board[1][7] = new Knight (1, 7, Side.BLACK);
+        board[6][7] = new Knight (6, 7, Side.BLACK);
 
         // White Bishops
-        board[0][2] = new Bishop (0, 2, Side.WHITE);
-        board[0][5] = new Bishop (0, 5, Side.WHITE);
+        board[2][0] = new Bishop (2, 0, Side.WHITE);
+        board[5][0] = new Bishop (5, 0, Side.WHITE);
 
         // Black Bishops
-        board[7][2] = new Bishop (7, 2, Side.BLACK);
-        board[7][5] = new Bishop (7, 5, Side.BLACK);
+        board[2][7] = new Bishop (2, 7, Side.BLACK);
+        board[5][7] = new Bishop (5, 7, Side.BLACK);
 
         // Queens
-        board[0][3] = new Queen (0, 3, Side.WHITE);
-        board[7][3] = new Queen (7, 3, Side.BLACK);
+        board[3][0] = new Queen (3, 0, Side.WHITE);
+        board[3][7] = new Queen (3, 7, Side.BLACK);
 
         // Kings
-        board[0][4] = new King (0, 4, Side.WHITE);
-        board[7][4] = new King (7, 4, Side.BLACK);
+        board[4][0] = new King (4, 0, Side.WHITE);
+        board[4][7] = new King (4, 7, Side.BLACK);
 
         return;
     }

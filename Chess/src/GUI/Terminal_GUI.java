@@ -33,10 +33,10 @@ public class Terminal_GUI
                 char res = ' ';
                 
                 //checking if a piece exists on said square
-                if (board.get_board()[j][i] != null) 
+                if (board.get_board()[i][j] != null) 
                 {
                     // converting the piece into a letter
-                    switch (board.get_board()[j][i].get_piece())
+                    switch (board.get_board()[i][j].get_piece())
                     {
                         case BISHOP:
                         res = 'B';

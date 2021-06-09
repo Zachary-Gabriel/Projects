@@ -1,6 +1,8 @@
 package Pieces;
 import Game.*;
 
+import java.util.*;
+
 // represents the 'skeleton' of all the pieces
 public abstract class Piece 
 {
@@ -60,5 +62,5 @@ public abstract class Piece
     }
 
     // each piece has their own set of moves
-    public abstract void move ();
+    public abstract Vector<Vector<Integer>> move ();
 }

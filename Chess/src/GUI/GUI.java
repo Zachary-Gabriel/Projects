@@ -3,6 +3,7 @@ package GUI;
 import Game.*;
 import Pieces.*;
 
+import java.util.*;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -21,13 +22,13 @@ public class GUI extends PApplet
     public static void main (String[] args) { PApplet.main(new String[]{"GUI.GUI"}); }
     
     // initial settings
-    public void settings() 
+    public void settings () 
     {
         size(800, 600);
     }
     
     // setup to the draw function
-    public void setup() 
+    public void setup () 
     {
         // preloading images whilst runniong other instructions
         preload_images ();
@@ -72,17 +73,24 @@ public class GUI extends PApplet
             }
         }
         if (prev_cl_x != -1 && prev_cl_y != -1 )
-            idno ();
+        move_piece ();
     }
     
-    void idno ()
+    void move_piece ()
     {
-        boolean valid = true;
+        boolean valid = false;
         
         System.out.println("");
-
+        
         if (board.get_piece (prev_cl_x, prev_cl_y) != null)
         {
+            Vector<Vector<Integer>> moves = board.get_piece (prev_cl_x, prev_cl_y).move();
+            for (int i = 0; i < moves.size(); ++i)
+            {
+                Vector<Integer> coords = moves.get(i);
+                if (coords.get(0) == clicked_x && coords.get(1) == clicked_y)
+                    valid = true;
+            }
             if (valid)
             {
                 Piece[][] tmp_brd = board.get_board();
@@ -90,21 +98,24 @@ public class GUI extends PApplet
                 tmp_brd[clicked_x][clicked_y] = tmp_brd[prev_cl_x][prev_cl_y];
                 tmp_brd[clicked_x][clicked_y].set_x (clicked_x);
                 tmp_brd[clicked_x][clicked_y].set_y (clicked_y);
-
+                
                 tmp_brd[prev_cl_x][prev_cl_y] = null;
                 board.set_board(tmp_brd);
-                
-                prev_cl_x = -1;
-                prev_cl_y = -1;
-                clicked_x = -1;
-                clicked_y = -1;
-                
+
+                // prints to terminal
                 Terminal_GUI tgui = new Terminal_GUI (board);
                 tgui.terminal_board ();
             }
         }
-    }
+        // resetting variables
+        prev_cl_x = -1;
+        prev_cl_y = -1;
+        clicked_x = -1;
+        clicked_y = -1;
 
+        return ;
+    }
+    
     void draw_board ()
     {
         // columns (ranks)
@@ -113,23 +124,42 @@ public class GUI extends PApplet
             // rows (files)
             for (int i = 0; i < 8; ++i)
             {
-                // tiles
+                // default tiles
                 if ((i+j) % 2 == 1)
                 fill (92, 64, 51); // dark tiles
                 else
                 fill (102, 51, 0); // light tiles
-                
-                // if hovering
-                if (i* (width /8) < mouseX && mouseX < (i+1)* (width /8) && 
-                j* (height /8) < mouseY && mouseY < (j+1)* (height /8))
-                    fill (0); // black
                 
                 // highlights the clicked square
                 if (i == clicked_x && j == clicked_y)
                 {
                     fill (125);
                 }
-
+                
+                // highlight the available moves
+                if (!(clicked_x == -1 || clicked_y == -1))
+                {
+                    if (board.get_piece (clicked_x, clicked_y) != null)
+                    {
+                        Vector<Vector<Integer>> moves = board.get_piece (clicked_x, clicked_y).move();
+                        for (int k = 0; k < moves.size(); ++k)
+                        {
+                            if (moves.elementAt(k).elementAt(0).intValue() == i && 
+                            moves.elementAt(k).elementAt(1).intValue() == j)
+                            {
+                                fill (0,255,0); //green
+                            }
+                        }
+                    }
+                }
+                
+                // if hovering
+                if (i* (width /8) < mouseX && mouseX < (i+1)* (width /8) && 
+                j* (height /8) < mouseY && mouseY < (j+1)* (height /8))
+                {
+                    fill (255,0,0); // red
+                }
+                
                 // draws the rectangle
                 rect (i* (width /8), j* (height /8), (i+1)* (width /8), (j+1)* (height /8));
                 
