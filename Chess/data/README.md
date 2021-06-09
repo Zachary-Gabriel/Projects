@@ -1,0 +1,1 @@
+Processing doesn't like the use of an assets directory in the GUI, so to avoid any problems the 'assets' dir got renamed to 'data' and was moved to a location in the project where processing could find it.
