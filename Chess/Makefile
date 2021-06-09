@@ -1,8 +1,9 @@
 run_linux:
 	javac -cp ".:lib/core.jar" -d bin src/*/*.java
-	cd bin; java -cp ".:../lib/core.jar" gui_package.GUI; cd ..
+	cd bin; java -cp ".:../lib/core.jar" GUI.GUI; cd ..
 
-clean:
-	rm bin/*.class
-	rm bin/gui_package/*.class
-	rm -r bin/gui_package
+clean:	
+	rm -r bin/Game
+	rm -r bin/Pieces
+	rm -r bin/Tests
+	rm -r bin/GUI

@@ -1,3 +1,6 @@
+package Pieces;
+import Game.*;
+
 public class Knight extends Piece 
 {
     // constructor
@@ -7,7 +10,7 @@ public class Knight extends Piece
     }
     
     // unique move of the specific piece
-    void move ()
+    public void move ()
     {
 
     }

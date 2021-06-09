@@ -1,3 +1,4 @@
+package Game;
 
 // represents the coordinate pairing. Will probably remove this as it complicates things
 public class Coords 

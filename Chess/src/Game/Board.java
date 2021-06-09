@@ -1,3 +1,6 @@
+package Game;
+
+import Pieces.*;
 
 // represents the board - this may be where most of the chess comes together
 public class Board 
@@ -5,7 +8,7 @@ public class Board
     Piece[][] board; // represents the chess board with a 2d pieces array
 
     // Constructor
-    Board ()
+    public Board ()
     {
         board = new Piece[8][8];
         return;
@@ -25,7 +28,7 @@ public class Board
     }
     
     // Turns the board into the default starting position
-    void initial_position ()
+    public void initial_position ()
     {
         // Pawns
         for (int i = 0; i < 8; ++i)

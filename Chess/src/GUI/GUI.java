@@ -1,14 +1,15 @@
-package gui_package;
+package GUI;
 
 import processing.core.PApplet;
+import Game.*;
+import Pieces.*;
 
 // The 'graphical user interface' so the user caan play the game
 public class GUI extends PApplet
 {
-    // Driver for processing
-    public static void main(String[] args) 
-    {
-        PApplet.main("gui_package.GUI");
+
+    public static void main(String[] args) {
+        PApplet.main(new String[]{"GUI.GUI"});
     }
     
     // initial settings
@@ -20,55 +21,36 @@ public class GUI extends PApplet
     // setup to the draw function
     public void setup() 
     {
-        
+        // makes the new board
+        Board board = new Board();
+        board.initial_position ();
+
+        // shows the board in the terminal
+        Terminal_GUI tgui = new Terminal_GUI (board);
+        tgui.terminal_board ();
+
+        // draws the board
+        draw_board ();
     }
     
     // Executes this code once per frame
     public void draw() 
     {
-        background(0);
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if ((i+j) % 2 == 1)
+                    fill (92, 64, 51); // brown
+                else
+                    fill ( 102, 51, 0); // grey
+                rect (i* (width/8), j* (height/8), (i+1)* (width/8), (j+1)* (height/8));
+            }
+        }
     }
     
-    // draws the board in ther terminal
-    // void terminal_board (Board board)
-    // {
-    //     // columns (ranks)
-    //     for (int j = 0; j < 8; ++j)
-    //     {
-    //         // rows (files)
-    //         for (int i = 0; i < 8; ++i)
-    //         {
-    //             // blank space representing no piece
-    //             char res = ' ';
-                
-    //             //checking if a piece exists on said square
-    //             if (board.get_board()[j][i] != null) 
-    //             {
-    //                 // converting the piece into a letter
-    //                 switch (board.get_board()[j][i].piece)
-    //                 {
-    //                     case BISHOP:
-    //                     res = 'B';
-    //                     break;
-    //                     case KING:
-    //                     res = 'K';
-    //                     break;
-    //                     case KNIGHT:
-    //                     res = 'N';
-    //                     break;
-    //                     case PAWN:
-    //                     res = 'P';
-    //                     break;
-    //                     case QUEEN:
-    //                     res = 'Q';
-    //                     break;
-    //                     case ROOK:
-    //                     res = 'R';
-    //                 }
-    //             }
-    //             System.out.print (res);
-    //         }
-    //         System.out.println();
-    //     }
-    // }
+    void draw_board ()
+    {
+
+    }
 }

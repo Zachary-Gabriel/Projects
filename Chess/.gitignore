@@ -1,4 +1,7 @@
 .vscode
 .metadata
 bin/*.class
-bin/com
+bin/GUI
+bin/Game
+bin/Pieces
+bin/Tests

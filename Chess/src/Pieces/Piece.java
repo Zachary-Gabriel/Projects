@@ -1,6 +1,8 @@
+package Pieces;
+import Game.*;
 
 // represents the 'skeleton' of all the pieces
-abstract class Piece 
+public abstract class Piece 
 {
     Coords coords; // coordinates for the pieces representing the rows
     Side side; // the side i.e. white / black
@@ -45,5 +47,5 @@ abstract class Piece
     }
 
     // each piece has their own set of moves
-    abstract void move ();
+    public abstract void move ();
 }
