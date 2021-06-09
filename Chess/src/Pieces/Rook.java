@@ -4,9 +4,9 @@ import Game.*;
 public class Rook extends Piece 
 {    
     // constructor
-    public Rook (Coords coords, Side side)
+    public Rook (int x, int y, Side side)
     {
-        super (coords, side, Piece_type.ROOK);
+        super (x, y, side, Piece_type.ROOK);
     }
     
     // unique move of the specific piece

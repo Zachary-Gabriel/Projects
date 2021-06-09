@@ -4,28 +4,41 @@ import Game.*;
 // represents the 'skeleton' of all the pieces
 public abstract class Piece 
 {
-    Coords coords; // coordinates for the pieces representing the rows
+    int x, y; // coordinates for the pieces representing the rows
     Side side; // the side i.e. white / black
     Piece_type piece; // the piece i.e. bishop
 
     // constructor
-    public Piece (Coords coords, Side side, Piece_type piece)
+    public Piece (int x, int y, Side side, Piece_type piece)
     {
-        this.coords = coords;
+        this.x = x;
+        this.y = y;
         this.side = side;
         this.piece = piece;
     }
 
-    // fetches the coordinates of the piece
-    public Coords get_coords ()
+    // updates the coordinates of the piece
+    public void set_x (int x)
     {
-        return this.coords;
+        this.x = x;
+    }
+
+    // returns the coordinates of the piece
+    public int get_x ()
+    {
+        return this.x;
     }
 
     // updates the coordinates of the piece
-    public void set_coords (Coords coords)
+    public void set_y (int y)
     {
-        this.coords = coords;
+        this.y = y;
+    }
+
+    // returns the coordinates of the piece
+    public int get_y ()
+    {
+        return this.y;
     }
     
     // fetches the side that the piece is on
@@ -35,9 +48,9 @@ public abstract class Piece
     }
 
     // fetches the coords of the piece
-    public void set_piece (Coords coords)
+    public void set_piece (Piece_type piece)
     {
-        this.coords = coords;
+        this.piece = piece;
     }
 
     // fetches the name of the piece

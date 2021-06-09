@@ -1,9 +1,10 @@
 package GUI;
 
-import processing.core.PApplet;
-import processing.core.PImage;
 import Game.*;
 import Pieces.*;
+
+import processing.core.PApplet;
+import processing.core.PImage;
 
 // The 'graphical user interface' so the user caan play the game
 public class GUI extends PApplet
@@ -11,7 +12,11 @@ public class GUI extends PApplet
     // private variables
     Board board;
     PImage[] images = new PImage[13]; // saves the images for faster performance
-
+    
+    // animation variables
+    int clicked_x, clicked_y;
+    int prev_cl_x, prev_cl_y;
+    
     // the main function that runs the settings(), then setup() then draw() functions.
     public static void main (String[] args) { PApplet.main(new String[]{"GUI.GUI"}); }
     
@@ -25,10 +30,10 @@ public class GUI extends PApplet
     public void setup() 
     {
         // preloading images whilst runniong other instructions
-        preload_images();
-
+        preload_images ();
+        
         // makes the new board
-        board = new Board();
+        board = new Board ();
         board.initial_position ();
         
         // shows the board in the terminal
@@ -36,6 +41,10 @@ public class GUI extends PApplet
         tgui.terminal_board ();
         
         // draws the board
+        clicked_x = -1;
+        clicked_y = -1;
+        prev_cl_x = -1;
+        prev_cl_y = -1;
         draw_board ();
     }
     
@@ -45,6 +54,57 @@ public class GUI extends PApplet
         draw_board ();
     }
     
+    // saves which tile was clicked
+    public void mousePressed ()
+    {
+        for (int i = 0; i < 8; ++i)
+        {
+            for (int j = 0; j < 8; ++j)
+            {
+                if (i* (width /8) < mouseX && mouseX < (i+1)* (width /8) && 
+                j* (height /8) < mouseY && mouseY < (j+1)* (height /8))
+                {
+                    prev_cl_x = clicked_x;
+                    prev_cl_y = clicked_y;
+                    clicked_x = i;
+                    clicked_y = j;
+                }
+            }
+        }
+        if (prev_cl_x != -1 && prev_cl_y != -1 )
+            idno ();
+    }
+    
+    void idno ()
+    {
+        boolean valid = true;
+        
+        System.out.println("");
+
+        if (board.get_piece (prev_cl_x, prev_cl_y) != null)
+        {
+            if (valid)
+            {
+                Piece[][] tmp_brd = board.get_board();
+                
+                tmp_brd[clicked_x][clicked_y] = tmp_brd[prev_cl_x][prev_cl_y];
+                tmp_brd[clicked_x][clicked_y].set_x (clicked_x);
+                tmp_brd[clicked_x][clicked_y].set_y (clicked_y);
+
+                tmp_brd[prev_cl_x][prev_cl_y] = null;
+                board.set_board(tmp_brd);
+                
+                prev_cl_x = -1;
+                prev_cl_y = -1;
+                clicked_x = -1;
+                clicked_y = -1;
+                
+                Terminal_GUI tgui = new Terminal_GUI (board);
+                tgui.terminal_board ();
+            }
+        }
+    }
+
     void draw_board ()
     {
         // columns (ranks)
@@ -55,14 +115,20 @@ public class GUI extends PApplet
             {
                 // tiles
                 if ((i+j) % 2 == 1)
-                    fill (92, 64, 51); // dark tiles
+                fill (92, 64, 51); // dark tiles
                 else
-                    fill (102, 51, 0); // light tiles
-
+                fill (102, 51, 0); // light tiles
+                
                 // if hovering
                 if (i* (width /8) < mouseX && mouseX < (i+1)* (width /8) && 
-                    j* (height /8) < mouseY && mouseY < (j+1)* (height /8))
+                j* (height /8) < mouseY && mouseY < (j+1)* (height /8))
                     fill (0); // black
+                
+                // highlights the clicked square
+                if (i == clicked_x && j == clicked_y)
+                {
+                    fill (125);
+                }
 
                 // draws the rectangle
                 rect (i* (width /8), j* (height /8), (i+1)* (width /8), (j+1)* (height /8));
@@ -77,16 +143,16 @@ public class GUI extends PApplet
     {
         // the image name. 'null' represents nothing
         String img_name = "null";
-
+        
         // checking if a piece exists on said square
-        if (board.get_board()[j][i] != null) 
+        if (board.get_board()[i][j] != null) 
         {
             // converting the piece into a letter
-            switch (board.get_board()[j][i].get_piece())
+            switch (board.get_board()[i][j].get_piece())
             {
                 case BISHOP:
                 img_name = "Bishop";
-                if (board.get_board()[j][i].get_side() == Side.BLACK)
+                if (board.get_board()[i][j].get_side() == Side.BLACK)
                 img_name += "_b";
                 else
                 img_name += "_w";
@@ -94,7 +160,7 @@ public class GUI extends PApplet
                 
                 case KING:
                 img_name = "King";
-                if (board.get_board()[j][i].get_side() == Side.BLACK)
+                if (board.get_board()[i][j].get_side() == Side.BLACK)
                 img_name += "_b";
                 else
                 img_name += "_w";
@@ -102,7 +168,7 @@ public class GUI extends PApplet
                 
                 case KNIGHT:
                 img_name = "Knight";
-                if (board.get_board()[j][i].get_side() == Side.BLACK)
+                if (board.get_board()[i][j].get_side() == Side.BLACK)
                 img_name += "_b";
                 else
                 img_name += "_w";
@@ -110,7 +176,7 @@ public class GUI extends PApplet
                 
                 case PAWN:
                 img_name = "Pawn";
-                if (board.get_board()[j][i].get_side() == Side.BLACK)
+                if (board.get_board()[i][j].get_side() == Side.BLACK)
                 img_name += "_b";
                 else
                 img_name += "_w";
@@ -118,7 +184,7 @@ public class GUI extends PApplet
                 
                 case QUEEN:
                 img_name = "Queen";
-                if (board.get_board()[j][i].get_side() == Side.BLACK)
+                if (board.get_board()[i][j].get_side() == Side.BLACK)
                 img_name += "_b";
                 else
                 img_name += "_w";
@@ -126,7 +192,7 @@ public class GUI extends PApplet
                 
                 case ROOK:
                 img_name = "Rook";
-                if (board.get_board()[j][i].get_side() == Side.BLACK)
+                if (board.get_board()[i][j].get_side() == Side.BLACK)
                 img_name += "_b";
                 else
                 img_name += "_w";
@@ -175,7 +241,7 @@ public class GUI extends PApplet
         }
         return -1;
     }
-
+    
     // Stores the images in an array so that theyre only loaded once.
     void preload_images ()
     {
@@ -186,7 +252,7 @@ public class GUI extends PApplet
         img_name = "Bishop_b.png";
         img = loadImage (img_name);
         images[1] = img;
-
+        
         img_name = "Bishop_w.png";
         img = loadImage (img_name);
         images[2] = img;
@@ -194,7 +260,7 @@ public class GUI extends PApplet
         img_name = "King_w.png";
         img = loadImage (img_name);
         images[3] = img;
-
+        
         img_name = "King_b.png";
         img = loadImage (img_name);
         images[4] = img;
@@ -202,7 +268,7 @@ public class GUI extends PApplet
         img_name = "Knight_w.png";
         img = loadImage (img_name);
         images[5] = img;
-
+        
         img_name = "Knight_b.png";
         img = loadImage (img_name);
         images[6] = img;
@@ -210,7 +276,7 @@ public class GUI extends PApplet
         img_name = "Pawn_w.png";
         img = loadImage (img_name);
         images[7] = img;
-
+        
         img_name = "Pawn_b.png";
         img = loadImage (img_name);
         images[8] = img;
@@ -218,7 +284,7 @@ public class GUI extends PApplet
         img_name = "Queen_w.png";
         img = loadImage (img_name);
         images[9] = img;
-
+        
         img_name = "Queen_b.png";
         img = loadImage (img_name);
         images[10] = img;
@@ -226,7 +292,7 @@ public class GUI extends PApplet
         img_name = "Rook_w.png";
         img = loadImage (img_name);
         images[11] = img;
-
+        
         img_name = "Rook_b.png";
         img = loadImage (img_name);
         images[12] = img;

@@ -3,9 +3,9 @@ import Game.*;
 
 public class King extends Piece {
     // constructor
-    public King (Coords coords, Side side)
+    public King (int x, int y, Side side)
     {
-        super (coords, side, Piece_type.KING);
+        super (x, y, side, Piece_type.KING);
     }
     
     // unique move of the specific piece
