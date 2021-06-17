@@ -10,11 +10,24 @@ public class Knight extends Piece
         super (x, y, side, Piece_type.KNIGHT);
     }
     
-    // unique move of the specific piece
-    public Vector<Vector<Integer>> move ()
+    // implementing the move
+    public void move (int x, int y)
+    {
+        Piece[][] brd = board.get_board();
+        
+        brd[this.x][this.y] = null;
+        brd[x][y] = this;
+        this.x = x;
+        this.y = y;
+
+        return;
+    }
+
+    // the set of all unique moves of the specific piece
+    public Vector<Vector<Integer>> available_move ()
     {
         Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Vector<Integer> temp_vec = new Vector<Integer>();
+        Piece[][] brd = board.get_board ();
 
         for (int i = 0; i < 8; ++i)
         {
@@ -23,10 +36,17 @@ public class Knight extends Piece
                 if ((this.x-2 == i || this.x+2 == i) && (this.y -1 == j || this.y +1 == j) ||
                     (this.x-1 == i || this.x+1 == i) && (this.y -2 == j || this.y +2 == j))
                 {
-                    temp_vec = new Vector<Integer>();
-                    temp_vec.add (i);
-                    temp_vec.add (j);
-                    moves.add (temp_vec);
+                    if (brd[i][j] != null)
+                    {
+                        if (brd[i][j].get_side() != this.side)
+                        {
+                            push_to_moves(moves, i, j);
+                        }
+                    }
+                    else
+                    {
+                        push_to_moves(moves, i, j);
+                    }
                 }
             }
         }

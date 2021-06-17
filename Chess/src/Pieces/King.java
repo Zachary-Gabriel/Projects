@@ -9,11 +9,24 @@ public class King extends Piece {
         super (x, y, side, Piece_type.KING);
     }
     
-    // unique move of the specific piece
-    public Vector<Vector<Integer>> move ()
+    // implementing the move
+    public void move (int x, int y)
+    {
+        Piece[][] brd = board.get_board();
+        
+        brd[this.x][this.y] = null;
+        brd[x][y] = this;
+        this.x = x;
+        this.y = y;
+
+        return;
+    }
+
+    // the set of all unique moves of the specific piece
+    public Vector<Vector<Integer>> available_move ()
     {
         Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Vector<Integer> temp_vec;
+        Piece[][] brd = board.get_board ();
 
         for (int i = 0; i < 8; ++i)
         {
@@ -23,10 +36,17 @@ public class King extends Piece {
                     j-1<= this.y && this.y <= j+1) && 
                     !(this.x == i && this.y == j))
                 {
-                    temp_vec = new Vector<Integer>();
-                    temp_vec.add (i);
-                    temp_vec.add (j);
-                    moves.add (temp_vec);
+                    if (brd[i][j] != null)
+                    {
+                        if (brd[i][j].get_side() != this.side)
+                        {
+                            push_to_moves(moves, i, j);
+                        }
+                    }
+                    else
+                    {
+                        push_to_moves(moves, i, j);
+                    }
                 }
             }
         }

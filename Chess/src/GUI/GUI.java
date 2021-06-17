@@ -13,6 +13,7 @@ public class GUI extends PApplet
     // private variables
     Board board;
     PImage[] images = new PImage[13]; // saves the images for faster performance
+    Side turn;
     
     // animation variables
     int clicked_x, clicked_y;
@@ -36,17 +37,18 @@ public class GUI extends PApplet
         // makes the new board
         board = new Board ();
         board.initial_position ();
+        update_pieces_to_board();
+        turn = Side.WHITE;
         
         // shows the board in the terminal
         Terminal_GUI tgui = new Terminal_GUI (board);
         tgui.terminal_board ();
         
-        // draws the board
+        // resetting the drawing variables
         clicked_x = -1;
         clicked_y = -1;
         prev_cl_x = -1;
         prev_cl_y = -1;
-        draw_board ();
     }
     
     // Executes this code once per frame
@@ -78,33 +80,34 @@ public class GUI extends PApplet
     
     void move_piece ()
     {
-        boolean valid = false;
-        
-        System.out.println("");
-        
         if (board.get_piece (prev_cl_x, prev_cl_y) != null)
         {
-            Vector<Vector<Integer>> moves = board.get_piece (prev_cl_x, prev_cl_y).move();
-            for (int i = 0; i < moves.size(); ++i)
+            if (board.get_piece (prev_cl_x, prev_cl_y).get_side () == turn)
             {
-                Vector<Integer> coords = moves.get(i);
-                if (coords.get(0) == clicked_x && coords.get(1) == clicked_y)
-                    valid = true;
-            }
-            if (valid)
-            {
-                Piece[][] tmp_brd = board.get_board();
-                
-                tmp_brd[clicked_x][clicked_y] = tmp_brd[prev_cl_x][prev_cl_y];
-                tmp_brd[clicked_x][clicked_y].set_x (clicked_x);
-                tmp_brd[clicked_x][clicked_y].set_y (clicked_y);
-                
-                tmp_brd[prev_cl_x][prev_cl_y] = null;
-                board.set_board(tmp_brd);
+                Vector<Vector<Integer>> moves = board.get_piece (prev_cl_x, prev_cl_y).available_move();
+                for (int i = 0; i < moves.size(); ++i)
+                {
+                    Vector<Integer> coords = moves.get(i);
+                    if (coords.get(0) == clicked_x && coords.get(1) == clicked_y)
+                    {
+                        board.get_board()[prev_cl_x][prev_cl_y].move (clicked_x, clicked_y);
+                        
+                        // prints to terminal
+                        Terminal_GUI tgui = new Terminal_GUI (board);
+                        System.out.println ("");
+                        tgui.terminal_board ();
 
-                // prints to terminal
-                Terminal_GUI tgui = new Terminal_GUI (board);
-                tgui.terminal_board ();
+                        // swapping turn
+                        if (turn == Side.WHITE)
+                        {
+                            turn = Side.BLACK;
+                        }
+                        else
+                        {
+                            turn = Side.WHITE;
+                        }
+                    }   
+                }
             }
         }
         // resetting variables
@@ -112,7 +115,7 @@ public class GUI extends PApplet
         prev_cl_y = -1;
         clicked_x = -1;
         clicked_y = -1;
-
+        
         return ;
     }
     
@@ -126,38 +129,22 @@ public class GUI extends PApplet
             {
                 // default tiles
                 if ((i+j) % 2 == 1)
-                fill (92, 64, 51); // dark tiles
+                fill (30, 20, 10); // dark tiles
                 else
-                fill (102, 51, 0); // light tiles
+                fill (101, 67, 33); // light tiles
+                
                 
                 // highlights the clicked square
                 if (i == clicked_x && j == clicked_y)
                 {
-                    fill (125);
-                }
-                
-                // highlight the available moves
-                if (!(clicked_x == -1 || clicked_y == -1))
-                {
-                    if (board.get_piece (clicked_x, clicked_y) != null)
-                    {
-                        Vector<Vector<Integer>> moves = board.get_piece (clicked_x, clicked_y).move();
-                        for (int k = 0; k < moves.size(); ++k)
-                        {
-                            if (moves.elementAt(k).elementAt(0).intValue() == i && 
-                            moves.elementAt(k).elementAt(1).intValue() == j)
-                            {
-                                fill (0,255,0); //green
-                            }
-                        }
-                    }
+                    fill (189, 144, 60); // yellow
                 }
                 
                 // if hovering
                 if (i* (width /8) < mouseX && mouseX < (i+1)* (width /8) && 
                 j* (height /8) < mouseY && mouseY < (j+1)* (height /8))
                 {
-                    fill (255,0,0); // red
+                    fill (242, 214, 0); // red
                 }
                 
                 // draws the rectangle
@@ -165,8 +152,54 @@ public class GUI extends PApplet
                 
                 // if there's an image on the square, draw it
                 draw_image (i, j);
+                
+                // highlight the available moves
+                if (!(clicked_x == -1 || clicked_y == -1))
+                {
+                    if (board.get_piece (clicked_x, clicked_y) != null)
+                    {
+                        if (board.get_piece (clicked_x, clicked_y).get_side () == turn)
+                        {
+                            Vector<Vector<Integer>> moves = board.get_piece (clicked_x, clicked_y).available_move();
+                            for (int k = 0; k < moves.size(); ++k)
+                            {
+                                if (moves.elementAt(k).elementAt(0).intValue() == i && 
+                                moves.elementAt(k).elementAt(1).intValue() == j)
+                                {
+                                    fill (125); //grey
+                                    noStroke();
+                                    ellipse ((2*i+1)* (width /16), (2*j+1)* (height /16), (width /32), (height /32));
+                                    stroke(0);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // resetting variables
+                            prev_cl_x = -1;
+                            prev_cl_y = -1;
+                            clicked_x = -1;
+                            clicked_y = -1;
+                        }
+                    }
+                }
             }
         }
+    }
+    
+    void update_pieces_to_board ()
+    {
+        for (int i = 0; i < 8; ++i)
+        {
+            for (int j = 0; j < 8; ++j)
+            {
+                if (board.get_piece(i, j) != null)
+                {
+                    board.get_piece(i, j).update_board (board);
+                }
+            }
+        }
+        return ;
     }
     
     void draw_image (int i, int j)

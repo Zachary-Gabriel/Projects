@@ -33,6 +33,13 @@ public class Board
         return board[x][y];
     }
     
+    // evaulates whether or not the 
+    // public boolean can_move (int startx, int starty, int endx, int endy)
+    // {
+    //     Piece
+    //     return true;
+    // }
+
     // Turns the board into the default starting position
     public void initial_position ()
     {

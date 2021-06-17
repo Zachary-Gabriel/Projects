@@ -4,32 +4,119 @@ import java.util.*;
 
 public class Pawn extends Piece 
 {
+    /* these get sliced in C++ */
+    boolean first_move = true; // used to see if a pawn can move twice
+    boolean double_jumped = false; // used to see if a pawn has moved twice at the start
+    
     // constructor
     public Pawn (int x, int y, Side side)
     {
         super (x, y, side, Piece_type.PAWN);
     }
     
-    // unique move of the specific piece
-    public Vector<Vector<Integer>> move ()
+    // implementing the move
+    public void move (int x, int y)
+    {
+        Piece[][] brd = board.get_board();
+        
+        brd[this.x][this.y] = null;
+        brd[x][y] = this;
+        this.x = x;
+        this.y = y;
+        this.first_move = false;
+
+        return;
+    }
+    
+    
+    // the set of all unique moves of the specific piece
+    public Vector<Vector<Integer>> available_move ()
     {
         Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Vector<Integer> temp_vec = new Vector<Integer>();
+        Piece[][] brd = board.get_board();
         
-        for (int i = 0; i < 8; ++i)
+        if (this.side == Side.BLACK)
         {
-            for (int j = 0; j < 8; ++j)
+            // if first move, can double move
+            if (first_move && (brd[this.x][this.y-2] == null))
             {
-                if (this.y+1 == j && this.x == i)
+                push_to_moves (moves, this.x, this.y-2);
+            }
+            
+            if (0 <= this.y-1)
+            {
+                // if can move up
+                if ((brd[this.x][this.y-1] == null))
                 {
-                    temp_vec = new Vector<Integer>();
-                    temp_vec.add (i);
-                    temp_vec.add (j);
-                    moves.add (temp_vec);
+                    push_to_moves (moves, this.x, this.y-1);
+                }
+                
+                // if can take diagonally
+                if (this.x+1 < 8)
+                {
+                    if ((brd[this.x+1][this.y-1] != null))
+                    {
+                        if (brd[this.x+1][this.y-1].get_side() != this.side)
+                        {
+                            push_to_moves (moves, this.x+1, this.y-1);
+                        }
+                    }
+                }
+                
+                // if can take diagonally
+                if (0 <= this.x-1)
+                {
+                    if ((brd[this.x-1][this.y-1] != null))
+                    {
+                        if (brd[this.x-1][this.y-1].get_side() != this.side)
+                        {
+                            push_to_moves (moves, this.x-1, this.y-1);
+                        }
+                    }
                 }
             }
         }
-       
+        else // this.side == white
+        {
+            // if first move, can double move
+            if (first_move && (brd[this.x][this.y+2] == null))
+            {
+                push_to_moves (moves, this.x, this.y+2);
+            }
+            
+            if (0 <= this.y+1)
+            {
+                // if can move up
+                if ((brd[this.x][this.y+1] == null))
+                {
+                    push_to_moves (moves, this.x, this.y+1);
+                }
+                
+                // if can take diagonally
+                if (this.x+1 < 8)
+                {
+                    if ((brd[this.x+1][this.y+1] != null))
+                    {
+                        if (brd[this.x+1][this.y+1].get_side() != this.side)
+                        {
+                            push_to_moves (moves, this.x+1, this.y+1);
+                        }
+                    }
+                }
+                
+                // if can take diagonally
+                if (0 <= this.x-1)
+                {
+                    if ((brd[this.x-1][this.y+1] != null))
+                    {
+                        if (brd[this.x-1][this.y+1].get_side() != this.side)
+                        {
+                            push_to_moves (moves, this.x-1, this.y+1);
+                        }
+                    }
+                }
+            }
+        }    
         return moves;
     }
 }

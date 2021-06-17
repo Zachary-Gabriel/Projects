@@ -11,27 +11,67 @@ public class Bishop extends Piece
         super (x, y, side, Piece_type.BISHOP);
     }
     
-    // unique move of the specific piece
-    public Vector<Vector<Integer>> move ()
+    // implementing the move
+    public void move (int x, int y)
     {
-        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Vector<Integer> temp_vec;
+        Piece[][] brd = board.get_board();
+        
+        brd[this.x][this.y] = null;
+        brd[x][y] = this;
+        this.x = x;
+        this.y = y;
 
-        for (int i = 0; i < 8; ++i)
+        return;
+    }
+    
+    // finds the moves for one diagonal in one direction
+    private void one_diagonal (Vector<Vector<Integer>> moves, boolean incr_x, boolean incr_y)
+    {
+        Piece[][] brd = board.get_board();
+        int i = this.x;
+        int j = this.y;
+        
+        while (0 <= i && 0 <= j && i < 8 && j < 8) // bounds of the board
         {
-            for (int j = 0; j < 8; ++j)
+            if (((this.x - i == this.y - j) || (i - this.x == this.y - j)) && !(this.x == i && this.y == j)) // diagonal moves
             {
-                if ((this.x - i == this.y - j || 
-                    this.x - i == j - this.y) && 
-                    !(this.x == i && this.y == j))
+                if (brd[i][j] == null) // nothing in the tile
                 {
-                    temp_vec = new Vector<Integer>();
-                    temp_vec.add (i);
-                    temp_vec.add (j);
-                    moves.add (temp_vec);
+                    push_to_moves (moves, i, j);
+                }
+                else if (brd[i][j].side != this.side) // taking an enemy piece
+                {
+                    push_to_moves (moves, i, j);
+                    break;
+                }
+                else // cant push through the allied piece
+                {
+                    break;
                 }
             }
+            
+            if (incr_x)
+            i++;
+            else
+            i--;
+            
+            if (incr_y)
+            j++;
+            else
+            j--;
         }
+    }
+
+    // the set of all unique moves of the specific piece
+    public Vector<Vector<Integer>> available_move ()
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>(); 
+
+        one_diagonal (moves, true, true);
+        one_diagonal (moves, false, true);
+        one_diagonal (moves, true, false);
+        one_diagonal (moves, false, false);
+
         return moves;
     }
 }
