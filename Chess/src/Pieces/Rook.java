@@ -4,10 +4,18 @@ import java.util.*;
 
 public class Rook extends Piece 
 {    
+    boolean first_move = true; // used to see if can castle
+
     // constructor
     public Rook (int x, int y, Side side)
     {
         super (x, y, side, Piece_type.ROOK);
+    }
+    
+    void update_first_move (boolean toggle)
+    {
+        this.first_move = toggle;
+        return;
     }
     
     // implementing the move

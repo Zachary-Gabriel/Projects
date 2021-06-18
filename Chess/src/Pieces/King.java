@@ -3,11 +3,20 @@ package Pieces;
 import Game.*;
 import java.util.*;
 
-public class King extends Piece {
+public class King extends Piece 
+{
+    boolean first_move = true; // used to see if can castle
+
     // constructor
     public King (int x, int y, Side side)
     {
         super (x, y, side, Piece_type.KING);
+    }
+    
+    void update_first_move (boolean toggle)
+    {
+        this.first_move = toggle;
+        return;
     }
     
     // implementing the move
