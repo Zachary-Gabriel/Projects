@@ -67,9 +67,9 @@ public abstract class Piece
     {
         this.board = board;
     }
-
+    
     // pushes the coords (x, y) of an elegable move to a moves vector
-    public void push_to_moves (Vector<Vector<Integer>> moves, int x, int y)
+    protected void push_to_moves (Vector<Vector<Integer>> moves, int x, int y)
     {
         Vector<Integer> temp_vec = new Vector<Integer>();
         temp_vec.add (x);
@@ -78,7 +78,95 @@ public abstract class Piece
         return;
     }
     
+    // checks if a move causes checkmate
+    public void checkmate_check (Vector<Vector<Integer>> moves)
+    {
+        Piece[][] brd = board.get_board();
+        
+        Piece[][] dup_board = new Piece[8][8];
+        for (int i = 0; i < 8; ++i) {for (int j = 0; j < 8; ++j) {dup_board[i][j] = brd[i][j];}}
+
+        for (int i = 0; i < moves.size(); ++i)
+        {
+            dup_board[this.x][this.y] = null;
+            dup_board[moves.get(i).get(0)][moves.get(i).get(1)] = this;
+            
+            int kingx = -1;
+            int kingy = -1;
+            boolean exit_early = false;
+            boolean exit_early1 = false;
+
+            for (int j = 0; j < 8; ++j)
+            {
+                for (int k = 0; k < 8; ++k)
+                {
+                    if (dup_board[j][k] != null)
+                    {
+                        if (dup_board[j][k].get_piece () == Piece_type.KING && dup_board[j][k].get_side () == this.side)
+                        {
+                            kingx = j;
+                            kingy = k;
+                            exit_early = true;
+                            break ;
+                        }
+                    }
+                }
+                if (exit_early)
+                {
+                    break;
+                }
+            }
+            
+            exit_early = false;
+            
+            for (int j = 0; j < 8; ++j)
+            {
+                for (int k = 0; k < 8; ++k)
+                {
+                    if (dup_board[j][k] != null)
+                    {
+                        if (dup_board[j][k].get_side () != this.side)
+                        {
+                            Vector<Vector<Integer>> temp_moves = dup_board[j][k].available_move(dup_board);
+                            for (int l = 0; l < temp_moves.size(); ++l)
+                            {   
+                                if ((temp_moves.get(l).get(0) == kingx) && (temp_moves.get(l).get(1) == kingy))
+                                {
+                                    System.out.println (moves.get(i).get(0) + " " + moves.get(i).get(1));
+                                    moves.remove(i);
+                                    
+                                    i--;
+                                    exit_early = true;
+                                    exit_early1 = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (exit_early1)
+                    {
+                        break;
+                    }
+                }
+                if (exit_early)
+                {
+                    break;
+                }
+            }
+
+            for (int j = 0; j < 8; ++j) 
+            {
+                for (int k = 0; k < 8; ++k) 
+                {
+                    dup_board[j][k] = brd[j][k];
+                }
+            }
+        }
+        return ;
+    }
+    
     // each piece has their own set of moves
     public abstract void move (int x, int y);
     public abstract Vector<Vector<Integer>> available_move ();
+    public abstract Vector<Vector<Integer>> available_move (Piece[][] brd);
 }

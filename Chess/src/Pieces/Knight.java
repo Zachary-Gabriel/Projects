@@ -23,12 +23,8 @@ public class Knight extends Piece
         return;
     }
 
-    // the set of all unique moves of the specific piece
-    public Vector<Vector<Integer>> available_move ()
+    void move_on_board (Vector<Vector<Integer>> moves, Piece[][] brd)
     {
-        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Piece[][] brd = board.get_board ();
-
         for (int i = 0; i < 8; ++i)
         {
             for (int j = 0; j < 8; ++j)
@@ -50,7 +46,25 @@ public class Knight extends Piece
                 }
             }
         }
+        return ;
+    }
 
+    // the set of all unique moves of the specific piece
+    public Vector<Vector<Integer>> available_move ()
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        Piece[][] brd = board.get_board ();
+        move_on_board (moves, brd);
+
+        return moves;
+    }
+
+    // the set of all unique moves of the specific piece using an input board
+    public Vector<Vector<Integer>> available_move (Piece[][] brd)
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        move_on_board (moves, brd);
+        
         return moves;
     }
 }

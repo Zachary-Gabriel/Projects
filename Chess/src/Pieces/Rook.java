@@ -24,9 +24,8 @@ public class Rook extends Piece
     }
 
     // finds the moves for one of the four directions the rook can move
-    private void one_direction (Vector<Vector<Integer>> moves, boolean incr_x, boolean incr_y)
+    private void one_direction (Vector<Vector<Integer>> moves, Piece[][] brd, boolean incr_x, boolean incr_y)
     {
-        Piece[][] brd = board.get_board();
         int i = this.x;
         int j = this.y;
         
@@ -87,10 +86,21 @@ public class Rook extends Piece
     public Vector<Vector<Integer>> available_move ()
     {
         Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>(); 
+        Piece[][] brd = board.get_board();
 
-        one_direction (moves, true, true);
-        one_direction (moves, false, false);
+        one_direction (moves, brd, true, true);
+        one_direction (moves, brd, false, false);
 
+        return moves;
+    }
+
+    // the set of all unique moves of the specific piece using an input board
+    public Vector<Vector<Integer>> available_move (Piece[][] brd)
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        one_direction (moves, brd, true, true);
+        one_direction (moves, brd, false, false);
+        
         return moves;
     }
 }

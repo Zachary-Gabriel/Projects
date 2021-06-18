@@ -1,4 +1,5 @@
 package Pieces;
+
 import Game.*;
 import java.util.*;
 
@@ -18,23 +19,19 @@ public class King extends Piece {
         brd[x][y] = this;
         this.x = x;
         this.y = y;
-
+        
         return;
     }
-
-    // the set of all unique moves of the specific piece
-    public Vector<Vector<Integer>> available_move ()
+    
+    void move_on_board (Vector<Vector<Integer>> moves, Piece[][] brd)
     {
-        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Piece[][] brd = board.get_board ();
-
         for (int i = 0; i < 8; ++i)
         {
             for (int j = 0; j < 8; ++j)
             {
                 if ((i-1<= this.x && this.x <= i+1 &&
-                    j-1<= this.y && this.y <= j+1) && 
-                    !(this.x == i && this.y == j))
+                j-1<= this.y && this.y <= j+1) && 
+                !(this.x == i && this.y == j))
                 {
                     if (brd[i][j] != null)
                     {
@@ -50,7 +47,24 @@ public class King extends Piece {
                 }
             }
         }
+    }
+    
+    // the set of all unique moves of the specific piece
+    public Vector<Vector<Integer>> available_move ()
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        Piece[][] brd = board.get_board ();
+        move_on_board (moves, brd);
+        
+        return moves;
+    }
 
+    // the set of all unique moves of the specific piece using an input board
+    public Vector<Vector<Integer>> available_move (Piece[][] brd)
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        move_on_board (moves, brd);
+        
         return moves;
     }
 }

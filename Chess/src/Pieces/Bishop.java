@@ -25,9 +25,8 @@ public class Bishop extends Piece
     }
     
     // finds the moves for one diagonal in one direction
-    private void one_diagonal (Vector<Vector<Integer>> moves, boolean incr_x, boolean incr_y)
+    private void one_diagonal (Vector<Vector<Integer>> moves, Piece[][] brd,  boolean incr_x, boolean incr_y)
     {
-        Piece[][] brd = board.get_board();
         int i = this.x;
         int j = this.y;
         
@@ -66,11 +65,24 @@ public class Bishop extends Piece
     public Vector<Vector<Integer>> available_move ()
     {
         Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>(); 
+        Piece[][] brd = board.get_board();
 
-        one_diagonal (moves, true, true);
-        one_diagonal (moves, false, true);
-        one_diagonal (moves, true, false);
-        one_diagonal (moves, false, false);
+        one_diagonal (moves, brd, true, true);
+        one_diagonal (moves, brd, false, true);
+        one_diagonal (moves, brd, true, false);
+        one_diagonal (moves, brd, false, false);
+
+        return moves;
+    }
+
+    public Vector<Vector<Integer>> available_move (Piece[][] brd)
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+
+        one_diagonal (moves, brd, true, true);
+        one_diagonal (moves, brd, false, true);
+        one_diagonal (moves, brd, true, false);
+        one_diagonal (moves, brd, false, false);
 
         return moves;
     }

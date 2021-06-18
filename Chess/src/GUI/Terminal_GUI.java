@@ -30,36 +30,46 @@ public class Terminal_GUI
             for (int i = 0; i < 8; ++i)
             {
                 // blank space representing no piece
-                char res = ' ';
-                
-                //checking if a piece exists on said square
+                String res = " . ";
+                // checking if a piece exists on said square
                 if (board.get_board()[i][j] != null) 
                 {
+                    // Noting down the side of the piece
+                    if (board.get_board()[i][j].get_side () == Side.WHITE)
+                    {
+                        res = "W.";
+                    }
+                    else
+                    {
+                        res = "B.";
+                    }
+
                     // converting the piece into a letter
                     switch (board.get_board()[i][j].get_piece())
                     {
                         case BISHOP:
-                        res = 'B';
+                        res += "B";
                         break;
                         case KING:
-                        res = 'K';
+                        res += "K";
                         break;
                         case KNIGHT:
-                        res = 'N';
+                        res += "N";
                         break;
                         case PAWN:
-                        res = 'P';
+                        res += "P";
                         break;
                         case QUEEN:
-                        res = 'Q';
+                        res += "Q";
                         break;
                         case ROOK:
-                        res = 'R';
+                        res += "R";
                     }
                 }
-                System.out.print (res);
+                System.out.print (res + "|");
             }
             System.out.println();
         }
+        System.out.println ("");
     }
 }

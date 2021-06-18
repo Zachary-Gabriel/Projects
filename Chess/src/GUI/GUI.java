@@ -37,7 +37,7 @@ public class GUI extends PApplet
         // makes the new board
         board = new Board ();
         board.initial_position ();
-        update_pieces_to_board();
+        update_pieces_to_board ();
         turn = Side.WHITE;
         
         // shows the board in the terminal
@@ -85,16 +85,18 @@ public class GUI extends PApplet
             if (board.get_piece (prev_cl_x, prev_cl_y).get_side () == turn)
             {
                 Vector<Vector<Integer>> moves = board.get_piece (prev_cl_x, prev_cl_y).available_move();
+                board.get_piece (prev_cl_x, prev_cl_y).checkmate_check(moves);
+                System.out.println("");
+
                 for (int i = 0; i < moves.size(); ++i)
                 {
                     Vector<Integer> coords = moves.get(i);
                     if (coords.get(0) == clicked_x && coords.get(1) == clicked_y)
                     {
-                        board.get_board()[prev_cl_x][prev_cl_y].move (clicked_x, clicked_y);
+                        board.get_board ()[prev_cl_x][prev_cl_y].move (clicked_x, clicked_y);
                         
                         // prints to terminal
                         Terminal_GUI tgui = new Terminal_GUI (board);
-                        System.out.println ("");
                         tgui.terminal_board ();
 
                         // swapping turn
@@ -121,11 +123,11 @@ public class GUI extends PApplet
     
     void draw_board ()
     {
-        // columns (ranks)
-        for (int j = 0; j < 8; ++j)
+        // rows (files)
+        for (int i = 0; i < 8; ++i)
         {
-            // rows (files)
-            for (int i = 0; i < 8; ++i)
+            // columns (ranks)
+            for (int j = 0; j < 8; ++j)
             {
                 // default tiles
                 if ((i+j) % 2 == 1)
@@ -133,18 +135,17 @@ public class GUI extends PApplet
                 else
                 fill (101, 67, 33); // light tiles
                 
-                
                 // highlights the clicked square
                 if (i == clicked_x && j == clicked_y)
                 {
-                    fill (189, 144, 60); // yellow
+                    fill (189, 144, 60); // light yellow
                 }
                 
                 // if hovering
                 if (i* (width /8) < mouseX && mouseX < (i+1)* (width /8) && 
-                j* (height /8) < mouseY && mouseY < (j+1)* (height /8))
+                j* (height /8) < mouseY && mouseY < (j+1)* (height /8)) 
                 {
-                    fill (242, 214, 0); // red
+                    fill (242, 214, 0); // yellow
                 }
                 
                 // draws the rectangle
@@ -161,12 +162,15 @@ public class GUI extends PApplet
                         if (board.get_piece (clicked_x, clicked_y).get_side () == turn)
                         {
                             Vector<Vector<Integer>> moves = board.get_piece (clicked_x, clicked_y).available_move();
+                            board.get_piece (clicked_x, clicked_y).checkmate_check(moves);
+                            System.out.println("");
+
                             for (int k = 0; k < moves.size(); ++k)
                             {
                                 if (moves.elementAt(k).elementAt(0).intValue() == i && 
                                 moves.elementAt(k).elementAt(1).intValue() == j)
                                 {
-                                    fill (125); //grey
+                                    fill (125); // grey
                                     noStroke();
                                     ellipse ((2*i+1)* (width /16), (2*j+1)* (height /16), (width /32), (height /32));
                                     stroke(0);

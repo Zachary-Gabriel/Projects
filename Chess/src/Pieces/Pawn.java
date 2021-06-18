@@ -1,4 +1,5 @@
 package Pieces;
+
 import Game.*;
 import java.util.*;
 
@@ -19,22 +20,22 @@ public class Pawn extends Piece
     {
         Piece[][] brd = board.get_board();
         
+        if (this.y - y == -2 || this.y - y == 2)
+        {
+            double_jumped = true;
+        }
+        
         brd[this.x][this.y] = null;
         brd[x][y] = this;
         this.x = x;
         this.y = y;
         this.first_move = false;
-
+        
         return;
     }
     
-    
-    // the set of all unique moves of the specific piece
-    public Vector<Vector<Integer>> available_move ()
+    private void move_on_board (Vector<Vector<Integer>> moves, Piece[][] brd)
     {
-        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Piece[][] brd = board.get_board();
-        
         if (this.side == Side.BLACK)
         {
             // if first move, can double move
@@ -84,7 +85,7 @@ public class Pawn extends Piece
                 push_to_moves (moves, this.x, this.y+2);
             }
             
-            if (0 <= this.y+1)
+            if (this.y+1 < 8)
             {
                 // if can move up
                 if ((brd[this.x][this.y+1] == null))
@@ -116,7 +117,23 @@ public class Pawn extends Piece
                     }
                 }
             }
-        }    
+        }
+    }
+    
+    // the set of all unique moves of the specific piece
+    public Vector<Vector<Integer>> available_move ()
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        Piece[][] brd = board.get_board();
+        move_on_board (moves, brd);
+        return moves;
+    }
+
+    // the set of all unique moves of the specific piece using an input board
+    public Vector<Vector<Integer>> available_move (Piece[][] brd)
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        move_on_board (moves, brd);
         return moves;
     }
 }

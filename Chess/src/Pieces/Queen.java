@@ -23,31 +23,35 @@ public class Queen extends Piece
         return;
     }
 
+    private void steal_moves (Vector<Vector<Integer>> moves, Piece[][] brd)
+    {
+        Bishop b = new Bishop(this.x, this.y, side);
+        brd[this.x][this.y] = b;
+
+        Rook r = new Rook(this.x, this.y, side);
+        brd[this.x][this.y] = r;
+
+        moves.addAll(r.available_move(brd));
+        moves.addAll(b.available_move(brd));
+        
+        brd[this.x][this.y] = this;
+    }
+
     // the set of all unique moves of the specific piece
     public Vector<Vector<Integer>> available_move ()
     {
         Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
-        Board tmp_board = board;
-
-        Bishop b = new Bishop(this.x, this.y, side);
-        tmp_board.get_board()[this.x][this.y] = b;
-        tmp_board.set_board (tmp_board.get_board());
-        b.update_board(tmp_board);
-
-        Rook r = new Rook(this.x, this.y, side);
-        tmp_board.get_board()[this.x][this.y] = r;
-        tmp_board.set_board (tmp_board.get_board());
-        r.update_board(tmp_board);
-
-        moves = b.available_move();
-        for (int i = 0; i < r.available_move().size(); ++i)
-        {
-            moves.addElement(r.available_move().get(i));
-        }
+        Piece[][] brd = board.get_board();
+        steal_moves (moves, brd);
         
-        tmp_board.get_board()[this.x][this.y] = this;
-        tmp_board.set_board (tmp_board.get_board());
-        this.update_board(board);
+        return moves;
+    }
+    
+    // the set of all unique moves of the specific piece using an input board
+    public Vector<Vector<Integer>> available_move (Piece[][] brd)
+    {
+        Vector<Vector<Integer>> moves = new Vector<Vector<Integer>>();
+        steal_moves (moves, brd);
         
         return moves;
     }
