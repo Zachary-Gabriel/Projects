@@ -132,9 +132,7 @@ public abstract class Piece
                             {   
                                 if ((temp_moves.get(l).get(0) == kingx) && (temp_moves.get(l).get(1) == kingy))
                                 {
-                                    System.out.println (moves.get(i).get(0) + " " + moves.get(i).get(1));
                                     moves.remove(i);
-                                    
                                     i--;
                                     exit_early = true;
                                     exit_early1 = true;

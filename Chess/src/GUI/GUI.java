@@ -163,7 +163,6 @@ public class GUI extends PApplet
                         {
                             Vector<Vector<Integer>> moves = board.get_piece (clicked_x, clicked_y).available_move();
                             board.get_piece (clicked_x, clicked_y).checkmate_check(moves);
-                            System.out.println("");
 
                             for (int k = 0; k < moves.size(); ++k)
                             {
