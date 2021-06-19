@@ -27,12 +27,12 @@ public class Queen extends Piece
     {
         Bishop b = new Bishop(this.x, this.y, side);
         brd[this.x][this.y] = b;
+        moves.addAll(b.available_move(brd));
 
         Rook r = new Rook(this.x, this.y, side);
         brd[this.x][this.y] = r;
         r.update_first_move (false);
         moves.addAll(r.available_move(brd));
-        moves.addAll(b.available_move(brd));
         
         brd[this.x][this.y] = this;
     }

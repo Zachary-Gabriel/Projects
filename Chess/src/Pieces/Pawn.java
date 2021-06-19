@@ -6,7 +6,6 @@ import java.util.*;
 public class Pawn extends Piece 
 {
     /* these get sliced in C++ */
-    boolean first_move = true; // used to see if a pawn can move twice
     public boolean can_enpassant = false; // used to see if a pawn has moved twice at the start
     
     // constructor

@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Rook extends Piece 
 {    
-    boolean first_move = true; // used to see if can castle
 
     // constructor
     public Rook (int x, int y, Side side)
@@ -27,6 +26,7 @@ public class Rook extends Piece
         brd[x][y] = this;
         this.x = x;
         this.y = y;
+        first_move = false;
 
         return;
     }
