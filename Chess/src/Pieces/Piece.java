@@ -114,7 +114,7 @@ public abstract class Piece
     public boolean checkmate_check (Vector<Vector<Integer>> moves)
     {
         Piece[][] brd = board.get_board();
-        boolean ret_val = true;
+        boolean ret_val = false;
         boolean exit_early = false;
         boolean exit_early1 = false;
 
@@ -157,7 +157,7 @@ public abstract class Piece
                                     i--;
                                     exit_early = true;
                                     exit_early1 = true;
-                                    ret_val = false;
+                                    ret_val = true;
                                     break;
                                 }
                             }

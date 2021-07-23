@@ -32,13 +32,6 @@ public class Board
     {
         return board[x][y];
     }
-    
-    // evaulates whether or not the 
-    // public boolean can_move (int startx, int starty, int endx, int endy)
-    // {
-    //     Piece
-    //     return true;
-    // }
 
     // Turns the board into the default starting position
     public void initial_position ()
@@ -75,12 +68,12 @@ public class Board
         board[5][7] = new Bishop (5, 7, Side.BLACK);
 
         // Queens
-        board[3][0] = new Queen (3, 0, Side.WHITE);
-        board[3][7] = new Queen (3, 7, Side.BLACK);
+        board[4][0] = new Queen (4, 0, Side.WHITE);
+        board[4][7] = new Queen (4, 7, Side.BLACK);
 
         // Kings
-        board[4][0] = new King (4, 0, Side.WHITE);
-        board[4][7] = new King (4, 7, Side.BLACK);
+        board[3][0] = new King (3, 0, Side.WHITE);
+        board[3][7] = new King (3, 7, Side.BLACK);
 
         return;
     }
